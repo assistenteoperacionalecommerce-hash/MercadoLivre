@@ -971,5 +971,31 @@
    "md5_original": "7d3392a09082a8272d00630a0ad8be23",
    "tamanho_original": 28765
   }
+ },
+ "quarta_rodada": {
+  "o_que": "24/09 (noite, segunda mensagem): faixa 'Peças para o mesmo motor' e coleção pecas-agrale-m790-m93. Estado antes.",
+  "colecao": {
+   "id": "gid://shopify/Collection/311366156336",
+   "handle": "pecas-agrale-m790-m93",
+   "appliedDisjunctively": true,
+   "regras_metafield_205984858160_EQUALS": [
+    "M790",
+    "M93",
+    "M93ID",
+    "M95W",
+    "M795W",
+    "Agrale 4200",
+    "Agrale 4300"
+   ],
+   "produtos": 9
+  },
+  "tema": {
+   "copia": "gid://shopify/OnlineStoreTheme/166112100400",
+   "arquivo": "sections/atd-mesmo-motor.liquid",
+   "md5_original": "8914fd72e67a5d0836108ecd1b2649a6",
+   "tamanho_original": 10166,
+   "md5_novo": "bf3ec65f7ec5a9b13ff84a72effecf1c",
+   "tamanho_novo": 14940
+  }
  }
 }

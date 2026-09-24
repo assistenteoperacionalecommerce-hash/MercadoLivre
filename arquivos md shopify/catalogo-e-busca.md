@@ -469,6 +469,13 @@ Gravado sem `userErrors` e lido de volta. Estado anterior em
 - **12LD 475-2 no filtro 2175107 e Sileo**: continuam como estavam, à
   espera do catálogo oficial. Ver a lista de pendências em
   `comece-por-aqui.md`, item 15.
+- **"Peças para o mesmo motor" misturava motores** pelo nome do trator
+  (pistão MD com peças do M90). A faixa passou a casar só pela linha
+  `Motores Compatíveis:` (tema de trabalho; `tema-e-design.md`). A coleção
+  `pecas-agrale-m790-m93` perdeu as regras "Agrale 4200" e "Agrale 4300",
+  que puxavam o filtro do motor MAN. **Regra que fica: coleção "Peças para
+  <motor>" só tem regra de motor, nunca de trator**, porque um mesmo
+  trator sai de fábrica com motores diferentes.
 
 ### Estoque zerado até segunda ordem (decisão do cliente, 16/09/2026)
 

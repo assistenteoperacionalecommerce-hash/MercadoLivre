@@ -963,6 +963,59 @@ Três coisas para não esquecer:
 Medido em 390, 768, 990 e 1440, com peça em estoque e peça esgotada: topo 0px
 e fim 0px em todas. Botão de comprar a 1440 subiu de y=889 para y=692.
 
+### "Peças para o mesmo motor" só pelo motor (24/09/2026, tema de trabalho `166112100400`)
+
+Relato do cliente, com print do Conjunto do Pistão Agrale 4100 / 4118 /
+4120: "diz que ele serve para os motores MD, porém lá embaixo, no peças para
+o mesmo motor, estão os Agrale M90, M85... são o mesmo motor?" Não são. O
+MD é Ruggerini de 2 cilindros; o M80, o M85 e o M90 são Agrale de 1. A
+seção `sections/atd-mesmo-motor.liquid` casava a peça com qualquer outra
+que dividisse **um valor qualquer** do metacampo, e o metacampo tem trator,
+microtrator e escavadeira junto com motor. O trator Agrale 4100 saiu de
+fábrica com mais de um motor, e o Agrale 4200 também (M790 e MAN).
+
+Simulado nas 118 peças com metacampo, com a mesma ordem e o mesmo limite de
+8 da seção: **69 sugestões erradas em 30 páginas**. As de outro motor:
+
+- pistão MD com bronzina, anel e junta do M80 / M85 / M90, e o inverso
+  (pelo "Agrale 4100");
+- filtro de óleo do Agrale 4200 com motor MAN no meio das oito peças do
+  M790 / M93, e o inverso (pelo "Agrale 4200");
+- junta do M790 (2 cilindros) na página da junta do M93 (1 cilindro), e o
+  inverso;
+- virabrequim 4TNV88 XAT na página do virabrequim 4TNV88 comum, que diz
+  "Não é compatível com o modelo 4TNV88-XAT", e nos filtros e anéis do
+  4TNV88;
+- filtro de combustível NS50 / NS75 / NS90 nas páginas de camisa, anel e
+  pistão B9 / NB10, só porque os dois citam o microtrator TC10.
+
+O resto era peça de microtrator (cabo da direção, cabo de embreagem, faca
+da roçadeira TA73) e a sapata da VIO20 aparecendo como "peça do mesmo
+motor".
+
+**Regra nova da seção**: casa pela linha `Motores Compatíveis:` da
+descrição, dos dois lados. A peça da página e a candidata precisam ter pelo
+menos um motor escrito igual nessa linha. O metacampo continua fazendo o
+primeiro corte, e só a candidata que passa nele tem a descrição lida. Sem
+linha de motor, vale `Microtratores Compatíveis:` e o título vira "mesmo
+microtrator". Sem nenhuma das duas, a seção não mostra peça. Linha que
+começa com "Todos os modelos" (cabo do acelerador Tobatta) vale pela lista
+do metacampo.
+
+Conferido fora da loja, com o liquidjs rodando o arquivo novo contra as 118
+peças: **zero sugestões erradas** e as mesmas listas da simulação em todas
+as páginas. O título fica "mesmo motor" em 96 páginas e "mesmo microtrator"
+em 8 (cabos, capa, decalques, lona, juntas da caixa, faca TA73), e 14
+páginas ficam sem a seção porque nenhuma outra peça tem o mesmo motor. O
+pistão MD é uma delas, porque a loja não tem outra peça de motor MD. Arquivo
+gravado igual ao testado (md5 `bf3ec65f...`, 14.940 bytes; no ar é
+`8914fd72...`). **Falta medir no preview.**
+
+A coleção `pecas-agrale-m790-m93` tinha a mesma falha, nas regras "Agrale
+4200" e "Agrale 4300", e mostrava o filtro do motor MAN. As duas regras
+saíram (é loja, vale no ar na hora): 9 para 8 peças. Regra que fica:
+**coleção "Peças para <motor>" só tem regra de motor**, nunca de trator.
+
 ### A linha Observação (24/09/2026, tema de trabalho `166112100400`)
 
 Pedido do cliente, com print do pistão Agrale 4100: "a parte da observação

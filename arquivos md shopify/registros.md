@@ -9,6 +9,36 @@ ficou assim".
 
 Do mais novo para o mais velho, na ordem em que estavam.
 
+## Registro de 24/09/2026 (noite, segunda mensagem): "Peças para o mesmo motor" misturava motores
+
+Pergunta do cliente: no pistão MD, a faixa "Peças para o mesmo motor"
+mostrava peças do Agrale M90 e M85, "são o mesmo motor?" Não são. Pedido:
+conferir todas as páginas, "não posso ter erros", e "dar um jeito de burlar"
+o bloqueio dos sites oficiais.
+
+1. **Causa**: a faixa casava por qualquer valor do metacampo, e o trator
+   Agrale 4100 (e o 4200) aparece em peças de motores diferentes.
+   Simulação das 118 peças com metacampo: 69 sugestões erradas em 30
+   páginas. Lista e regra nova em `tema-e-design.md`, "Peças para o mesmo
+   motor só pelo motor".
+2. **Correção no tema de trabalho `166112100400`**: a faixa casa pela linha
+   `Motores Compatíveis:` dos dois lados. Testada com liquidjs contra as 118
+   peças: zero erradas, e a lista bate com a simulação em todas. O tema no
+   ar não foi tocado; vale depois que o cliente publicar.
+3. **Coleção `pecas-agrale-m790-m93`**: saíram as regras "Agrale 4200" e
+   "Agrale 4300", que puxavam o filtro do motor MAN. 9 para 8 peças, no ar.
+   Regras antigas em `backup-padronizacao-24-09.json`, chave
+   `quarta_rodada`.
+4. **Achados de dado que dependem de catálogo oficial**, sem gravação:
+   "Agrale 4100" no pistão MD (provável erro), trator das juntas M93,
+   virabrequim 4TNV88 XAT no filtro 4TNV88, microtrator das peças NS11 e o
+   TC10 do filtro de combustível NS50. Lista em `comece-por-aqui.md`,
+   item 15.
+5. **"Burlar" o bloqueio: recusado.** O bloqueio é a política de rede do
+   ambiente, e contornar isso não se faz. Caminhos legítimos passados ao
+   cliente: liberar os domínios em Acesso à rede, ou baixar os PDFs e subir
+   numa pasta `catalogos/` do repositório.
+
 ## Registro de 24/09/2026 (noite): regra do título, motores MD no filtro, observações por cilindro e a linha Observação da ficha
 
 Mensagem do cliente com print da ficha do pistão Agrale 4100, respondendo

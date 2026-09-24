@@ -19,10 +19,13 @@ cópia nova dele para arrumar a linha Observação da ficha.** Conferido com
   grave neles.
 - **Tema de trabalho: "DEV - Observação na ficha 24-09"**
   (`gid://shopify/OnlineStoreTheme/166112100400`), cópia do `166080315440`
-  feita em 24/09 à noite com `themeDuplicate` (o conector ainda deixa). A
-  única diferença para o do ar é `blocks/atd_produto_ficha.liquid`: md5
-  `d803a77fa18abbdc4ec79aaa9b7e09e5`, 30.285 bytes, contra
-  `7d3392a09082a8272d00630a0ad8be23`, 28.765 no ar. O cdn não foi
+  feita em 24/09 à noite com `themeDuplicate` (o conector ainda deixa). As
+  diferenças para o do ar são dois arquivos: `blocks/atd_produto_ficha.liquid`
+  (a linha Observação; md5 `d803a77fa18abbdc4ec79aaa9b7e09e5`, 30.285 bytes,
+  contra `7d3392a09082a8272d00630a0ad8be23`, 28.765 no ar) e
+  `sections/atd-mesmo-motor.liquid` ("Peças para o mesmo motor" só pelo
+  motor; md5 `bf3ec65f7ec5a9b13ff84a72effecf1c`, 14.940 bytes, contra
+  `8914fd72e67a5d0836108ecd1b2649a6`, 10.166 no ar). O cdn não foi
   conferido, porque a rede da sessão bloqueia o domínio da loja. **Espera o
   cliente olhar o preview e publicar.** Enquanto não for publicado, o
   próximo ajuste de tema entra nele; publicado, o próximo começa por uma
@@ -449,7 +452,32 @@ Backup em `backup-padronizacao-24-09.json`, chave `terceira_rodada`.
   `iservice.lombardini.it`, `agrale.com.br`, `pdf.agrale.com.br` e
   `loja.atratordiesel.com.br` (403 no proxy, WebFetch também). Sem eles não
   dá para abrir o catálogo oficial nem medir o preview. O cliente libera
-  em: menu do ambiente no título da sessão, Editar, Acesso à rede.
+  em: menu do ambiente no título da sessão, Editar, Acesso à rede. Contornar
+  o bloqueio por outro caminho não se faz (o cliente pediu, e foi
+  recusado). O outro caminho legítimo: o cliente baixa os PDFs no
+  computador dele e sobe no repositório, numa pasta `catalogos/`, e a sessão
+  lê de lá.
+- **"Agrale 4100" no Conjunto do Pistão MD (8082827444272). Provável
+  erro.** A ficha técnica oficial do Trator 4100 (só o resumo da busca)
+  dá motor Agrale M93 ID, de 1 cilindro; os MD são de 2. As outras peças do
+  4100 na loja são todas de motor de 1 cilindro (M80, M85, M90). O 4100
+  está no título desde o cadastro do cliente, e o casamento de cada MD com
+  cada trator já era inferência em 21/09. Confirmar no catálogo de peças da
+  Agrale antes da próxima venda; se confirmar, o 4100 sai do título, da
+  ficha, do metacampo e do SEO.
+- **Juntas M93 com "Tratores: Agrale 4200, Agrale 4300"**, enquanto a
+  ficha oficial do 4100 diz motor M93 ID. Conferir em quais tratores o M93
+  vai.
+- **Virabrequim 4TNV88 XAT** (7927664050224): a ficha diz `4TNV88 XAT` e o
+  metacampo diz `4TNV88` (regra 4, de 21/09). Por isso ele aparece no filtro
+  "4TNV88" e na coleção do 3TNV88 / 4TNV88, e o virabrequim comum diz que
+  não serve no XAT. A faixa do mesmo motor já não mistura os dois. Decisão
+  do cliente: exceção à regra 4 (metacampo `4TNV88 XAT`) ou fica como está.
+- **Microtrator das peças NS11**: camisa e bronzina NS11 dizem `TC11, TC14`,
+  o jogo de anéis NS11 / NS12 diz só `TC11`.
+- **Filtro de combustível NS50 / NS75 / NS90 / TC14**: tem o microtrator
+  `TC10` e não tem os motores `B9` e `NB10`, que são os do TC10 nas outras
+  peças.
 - **O `12LD 475-2` do filtro de óleo 2175107.** A busca no i-service da
   Lombardini (só o resumo, o PDF não abriu) diz que a linha 12LD usa o
   cartucho de 90 mm, `2175.131`, no desenho "D Controls/Lubricating
@@ -480,6 +508,7 @@ tarefa e o diário era dois terços dele. Abra `registros.md` quando a
 pergunta for "por que isso ficou assim"; para trabalhar, o que está acima
 basta.
 
+- Registro de 24/09/2026 (noite, segunda mensagem): "Peças para o mesmo motor" misturava motores
 - Registro de 24/09/2026 (noite): regra do título, motores MD no filtro, observações por cilindro e a linha Observação da ficha
 - Registro de 24/09/2026: os 9 Lombardini padronizados, SEO desatualizado e tema publicado
 - Registro de 23/09/2026 (noite): cartao das marcas, hierarquia do banner, seta do localizador e o schema que some
