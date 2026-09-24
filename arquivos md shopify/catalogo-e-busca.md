@@ -16,7 +16,8 @@ modelos separados por " / ", mais a medida.
 
 - Códigos de motor em caixa alta: NS11, TC14, 3TNV88, B4T.
 - Medida logo depois dos modelos: STD, 0,25, 0,50.
-- `Original <Marca>` só onde já era verdade.
+- `Original` no fim do título quando a peça é original, depois da medida
+  (`... NS11 STD Original`). Todas as Lombardini são (cliente, 24/09).
 - **Nunca travessão.** Vírgula, ponto ou parênteses.
 - Exceção: as 8 lâminas de enxada rotativa levam o fabricante no fim do
   título, senão Fardin e Balbinot ficariam idênticas.
@@ -39,10 +40,174 @@ SKU `NS18.01336 P`: o "P" faz parte do código real.
 
 ## 2. Cadastro de produto novo
 
-A tabela de campo por campo é a skill `padronizar-produto-atd`, escrita em
-22/09/2026 a partir de três peças já certas do catálogo (camisa NS11, camisa
-AR160 e elemento de filtro 4TNV88). Invoque com o código interno, endereço ou
-título da peça. Fica aqui só o que não é tabela de skill:
+**Este é o padrão completo, campo por campo** (escrito em 24/09/2026). Até
+então ele morava só na skill `padronizar-produto-atd`, que fica na conta e
+no computador do cliente e não abre em sessão na nuvem. Tirado do que está
+gravado hoje nas peças certas (camisas NS11 e AR160, pistão B9, filtro de
+óleo Agrale 4200, os 9 Lombardini de 24/09) e das regras deste arquivo. Se
+a skill disser outra coisa, alinhe as duas com o cliente.
+
+### Título
+
+`peça + marca da máquina + modelos separados por " / " + medida + Original`
+
+- Peça no nome já unificado (seção 1) e no singular: `Pistão`, `Camisa do
+  Cilindro`, `Bronzina de Mancal`, `Elemento do Filtro de Ar`. Conjunto com
+  anéis, pino e travas é `Conjunto do Pistão`.
+- Marca da **máquina** (Yanmar, Agrale, Tobatta, Branco, Lavrale,
+  Lombardini), não a do fabricante da peça.
+- Modelos em caixa alta, como na plaqueta: `NS11`, `LDW 1003`, `12LD 475-2`,
+  `B4T 13.0`. Em pistão, anel e camisa, todo modelo da ficha tem que estar
+  no título (regra 2, mais abaixo); nas outras peças o título leva os
+  principais e a lista inteira fica na ficha.
+  **Fora da regra hoje**: o Conjunto do Pistão Lombardini 6501512 tem
+  `Sileo 1000` e `Sileo 1400` na ficha e não no título (entraram em 24/09).
+  O cliente decide se vão para o título ou ficam só em etiqueta.
+- Medida depois dos modelos: `STD`, `0,25`, `0,50`.
+- `Original` no fim, quando for original.
+- Nunca: código da peça, "Motor", "para", "Kit", travessão.
+
+Exemplos: `Camisa do Cilindro Yanmar NS11 STD Original`, `Bronzina de Mancal
+Lombardini LDW 1003 / LDW 1404 0,50 Original`, `Filtro de Óleo Agrale 4200 /
+MAN / Valmet`.
+
+### Marca (campo Fornecedor)
+
+O fabricante **real** da peça: `Yanmar` na camisa NS11 original, `Centrinel`
+na camisa AR160, `Bosch` no porta-injetor Lombardini. Sem fabricante
+conhecido, `1ª Linha`. Aparece na ficha, nunca no título.
+
+### Tipo de produto
+
+Um dos que já existem, escrito igual (41 em 24/09): Anel de Plantadeira,
+Anéis, Balança, Bloco, Bomba, Bronzina de Biela, Bronzina de Mancal, Bucha,
+Cabo, Cachimbo, Cachorrete, Caixa do Ventilador, Camisa, Capa da Correia,
+Carcaça, Carretel, Cobertura do Radiador, Correia, Coxim, Decalque, Disco
+de Plantadeira, Engrenagem, Escapamento, Faca para Rotativa, Faca para
+Roçadeira, Filtro, Juntas, Lona da Embreagem, Mancal de Encosto, Manivela,
+Mola, Parafuso, Pistão, Porta-Injetor, Regulador, Retentor, Rolamento,
+Rotor, Sapata, Virabrequim, Válvula.
+
+Tipo novo só quando nenhum serve. Ele precisa da etiqueta igual e, se o
+cliente quiser coleção ou chip, das três listas de `tema-e-design.md`.
+
+### Etiquetas
+
+1. **O tipo, escrito igual** (`Pistão`). Obrigatória: sem ela
+   `/collections/marca/tipo` devolve a marca inteira (erro silencioso,
+   abaixo).
+2. **Como o balcão e o cliente chamam a peça**, sem acento: `embolo`,
+   `conjunto de pistao`, `kit pistao`, `pistao 75mm`, `luva do cilindro`.
+3. **Cada modelo em minúsculas**, com e sem espaço quando tem espaço:
+   `ldw 1003`, `ldw1003`, `ns11`.
+4. **Equivalência, que nunca é texto visível**: outro nome do mesmo motor
+   (`nsb11`, `kdw 1003`, `kd625/2`, `tobata ar160`), código do fabricante
+   com e sem ponto (`6501512`, `6501.512`), código Kohler e Agrale,
+   código substituto e antigo, referência cruzada de filtro (`w920`,
+   `psl171`). Marca de motor que não é modelo (`ruggerini`) também mora
+   aqui.
+5. `agritech` em toda peça de microtrator TC (a coleção Agritech é por
+   etiqueta).
+
+Não gaste etiqueta com acento ou caixa: a Shopify junta `valvula` e
+`Válvula`.
+
+### Descrição
+
+Dois blocos, cada um com título em negrito e lista. Nada fora deles.
+
+```html
+<p><strong>Especificações:</strong></p>
+<ul>
+<li>SKU: 6501512</li>
+<li>Motores Compatíveis: LDW 702, LDW 1003, LDW 1404</li>
+<li>Medida: STD, 75 mm</li>
+<li>Conteúdo: pistão, pino, travas e jogo de anéis</li>
+</ul>
+<p><strong>Observações:</strong></p>
+<ul>
+<li>Uma frase por item.</li>
+</ul>
+```
+
+- **`SKU:`** é o **código do fabricante** (`NS11.01111`, `16A11`,
+  `7072.004.007.00.3`, `6501512` sem ponto na Lombardini). Não é o código
+  interno do ERP, que fica no SKU da variante.
+- **Linhas de compatibilidade**, uma por rótulo, sempre `<Rótulo>
+  Compatíveis:`: `Motores`, `Microtratores` (só os TC), `Tratores` (trator de
+  verdade, com a marca, `Agrale 4200`), `Motogeradores`, `Geradores`, `Mini
+  Escavadeiras`, `Câmbios`. Valores separados por vírgula, só o modelo, sem
+  "Motor", sem a marca na frente (a não ser que o modelo a inclua, `Valmet
+  88`), sem parêntese, sem "todos os modelos". O que entra e o que sai é a
+  "Regra da compatibilidade", mais abaixo.
+- **`Medida:`** e **`Conteúdo:`** só quando a peça tiver. Conteúdo diz o
+  que vem e o que não vem (`só o pistão, sem anéis, pino e travas`).
+- **Observações** é bloco próprio, uma frase por item: quantas o motor usa,
+  rosca e diâmetro, versão do motor, explicação que não cabe no valor.
+  Nunca `<li>Observações: ...</li>` dentro de Especificações, que sai sem
+  negrito e colado na ficha (cliente, 24/09). Sem observação, sem o bloco.
+- **Nunca**: texto de anúncio do Mercado Livre ("para que serve", "perguntas
+  do anúncio", "SOBRE A TRATOR DIESEL"), tabela, código de equivalência,
+  travessão.
+
+### Metacampo `custom.modelos_compativeis`
+
+Tipo `list.single_line_text_field`. **Todos os valores de todas as linhas
+"Compatíveis"**, escritos igual à ficha e na mesma ordem: a camisa NS11 tem
+`["NS11","NS12","BM11","TC11","TC14"]`. Ele alimenta três coisas: o filtro
+"Modelo da máquina", as coleções "Peças para Yanmar NS11 e NS12" e afins
+(que casam o valor exato) e o "Serve em" do cartão. Nunca marca sozinha
+(`Lombardini`, `Ruggerini`). Gravou, toque e confira (regra 9).
+
+Exceção a conferir: o Conjunto do Pistão Agrale 4100 tem só os tratores no
+metacampo (`Agrale 4100, Agrale 4118, Agrale 4120`), sem os motores MD da
+ficha. Está assim desde 22/09.
+
+### SEO
+
+- Título de SEO: vazio (vale o do produto).
+- Descrição: `<Título>, código <SKU da ficha>. Serve em <rótulo em
+  minúsculas> <modelos>. Envio para todo o Brasil.` Até três modelos, todos
+  (`LDW 1003 e LDW 1404`); mais que três, os dois primeiros e "e outros".
+  Mais de uma linha, separe com ponto e vírgula: `Serve em motores NS11, NS12
+  e BM11; microtratores TC11 e TC14.` Algumas antigas terminam em "Retirada
+  em Goiânia e envio para todo o Brasil."; as duas formas valem.
+- Mudou título ou compatibilidade, reescreva na mesma gravação.
+
+### Variante
+
+- **SKU**: o código interno do ERP Ensis (`30443`, `1833`).
+- **Preço**: o da planilha do cliente. Nunca zero.
+- **Estoque**: o total do ERP (skill `estoque-ensis-ecommerce`), rastreado,
+  sem vender sem estoque. Exceções na lista "Estoque zerado até segunda
+  ordem".
+- **Peso**: o real, em gramas. A Yampi calcula o frete com ele; zero ou 1 g é
+  erro.
+
+### Status, canais e endereço
+
+- **ACTIVE** sempre, mesmo com estoque zero (abaixo).
+- Publicado em **Loja virtual, Ponto de venda e Google & YouTube**.
+- **Endereço**: produto novo, tirado do título padronizado, minúsculas e sem
+  acento. Produto antigo mantém o que tem (muitos ainda carregam código ou
+  sobra de cadastro, como `-6501512` e `-pesar-foto`); trocar só com motivo,
+  e sempre com `redirectNewHandle: true`. Não há decisão do cliente sobre
+  isso ainda.
+- **Coleções**: nenhuma à mão. Marca entra pelo título, tipo pelo campo
+  Tipo, "Peças para..." pelo metacampo.
+
+### Depois de gravar
+
+1. Releia pela API: título, tipo, marca, etiquetas, descrição, metacampo,
+   SEO, estoque.
+2. Metacampo mudou: `tagsAdd` e `tagsRemove` de uma etiqueta temporária.
+3. Confira `/collections/<marca>/<tipo>` e
+   `/collections/<marca>?filter.p.m.custom.modelos_compativeis=<modelo>`
+   (4 links de recomendação em toda página: 4 quer dizer zero).
+4. Backup do que mudou num `backup-*.json` e registro em `registros.md`.
+
+### Armadilhas do cadastro
+
 
 - **Erro silencioso.** Sem etiqueta igual ao tipo, `/collections/marca/tipo`
   não dá prateleira vazia: devolve a coleção da marca inteira. Parece que
@@ -65,27 +230,6 @@ título da peça. Fica aqui só o que não é tabela de skill:
   de cada card. Coleção de uma página só mostra a esgotada na hora.
 - **`redirectNewHandle: true` no `productUpdate`** cria o redirecionamento
   sozinho. Não precisa de `urlRedirectCreate`.
-- **Formato da descrição** (cliente, 24/09: "a parte de observação está sem
-  formatação"). Dois blocos, cada um com título em negrito e lista:
-
-  ```html
-  <p><strong>Especificações:</strong></p>
-  <ul>
-  <li>SKU: ...</li>
-  <li>Motores Compatíveis: ...</li>
-  <li>Medida: ...</li>
-  <li>Conteúdo: ...</li>
-  </ul>
-  <p><strong>Observações:</strong></p>
-  <ul>
-  <li>Uma frase por item.</li>
-  </ul>
-  ```
-
-  `Medida:` e `Conteúdo:` só quando a peça tiver. **Observações nunca é
-  linha dentro de Especificações** (`<li>Observações: ...</li>`): sai sem
-  negrito e colada na ficha. Peça sem observação não leva o segundo bloco.
-
 **Marca nova precisa de três coisas, e só dessas três:**
 
 1. Coleção automática por `TITLE CONTAINS <marca>`.
@@ -325,8 +469,8 @@ Câmbios), cabo 1669 (`TC14s`) e cobertura 2370, que não tinha linha nenhuma.
 Divergências de título e compatibilidade: **resolvidas em 16/09** com o
 cliente (10127, 595, 727, 5431, 68099, carretel). Na mesma rodada, o padrão de
 rótulos ficou fechado: Microtratores só para os TC, Tratores para trator de
-verdade, e `Compatibilidade:` saiu do catálogo. Regra completa na skill
-`padronizar-produto-atd`; registro em `comece-por-aqui.md`, 16/09 (tarde).
+verdade, e `Compatibilidade:` saiu do catálogo. Regra completa na seção 2,
+"Descrição"; registro em `comece-por-aqui.md`, 16/09 (tarde).
 
 Peso zerado ou impossível na Shopify (a Yampi calcula frete com ele):
 74794 virabrequim 4TNV88 XAT (0 g), 52791 virabrequim 4TNV88 (15 g), 6352

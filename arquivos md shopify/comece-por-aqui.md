@@ -31,6 +31,9 @@ despublicado. Só arquivo de tema fica represado até a publicação.
 
 **Use a skill `poupar-tokens-print-shopify` sempre que trabalhar aqui.**
 
+**Padrão de produto, campo por campo**: `catalogo-e-busca.md`, seção 2.
+Vale mesmo sem a skill `padronizar-produto-atd`, que não abre na nuvem.
+
 \---
 
 ## Os documentos
@@ -39,7 +42,7 @@ despublicado. Só arquivo de tema fica represado até a publicação.
 |-|-|
 |`comece-por-aqui.md`|sempre, primeiro|
 |`tema-e-design.md`|paleta, tipografia, régua, home, cabeçalho, mega menu, celular, página de produto, SEO, diferenças entre DEV e publicado|
-|`catalogo-e-busca.md`|título de produto, ficha, etiqueta, coleção, mega menu por marca e tipo, busca da Shopify, ERP Ensis|
+|`catalogo-e-busca.md`|**padrão de produto campo por campo (seção 2)**, título, ficha, etiqueta, coleção, mega menu por marca e tipo, busca da Shopify, ERP Ensis|
 |`yampi-checkout-e-catalogo.md`|cupom, order bump, upsell, carrinho abandonado, pagamento, frete, dados da Yampi|
 |`paginas-institucionais.md`|políticas, fale conosco, faixa de fatos, acertos de interface do produto, faixa do vídeo|
 |`registros.md`|o diário, dia a dia. Só quando a pergunta for "por que isso ficou assim"|
@@ -412,7 +415,12 @@ O cliente respondeu no mesmo dia e está gravado. Detalhe em
 - ~~`Original`~~: **todas as peças Lombardini são originais**; os oito
   títulos que faltavam ganharam a palavra.
 
-**O que sobrou, sem decisão pendente mas para conferir:**
+**O que sobrou para conferir:**
+
+- **Sileo no título do pistão 6501512?** A regra 2 diz que em pistão, anel
+  e camisa todo modelo da ficha está no título. O Sileo 1000 / 1400 entrou
+  na ficha e não no título. Ou entra no título, ou sai da ficha e do
+  metacampo e fica só em etiqueta. Decisão do cliente.
 
 - **O `12LD 475-2` do filtro de óleo 2175107.** Está no título desde o
   cadastro do cliente e continua lá. Mas os catálogos de revenda dão para o
