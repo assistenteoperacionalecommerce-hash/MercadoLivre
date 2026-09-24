@@ -1,4 +1,4 @@
-# Comece por aqui (atualizado 23/09/2026)
+# Comece por aqui (atualizado 24/09/2026)
 
 > Datas: registros antigos marcados 16/09 e 17/09 foram feitos em 15/09/2026,
 > pela data do sistema. A partir da rodada de 16/09 à tarde, a data é a real.
@@ -6,25 +6,23 @@
 Documento de passagem. Sessão nova lê este primeiro.
 **A lista de pendências deste documento é a única que vale.**
 
-**Mudou em 23/09: tema de trabalho novo.**
+**Mudou em 24/09: o tema de trabalho foi publicado. Hoje não existe tema de
+trabalho.** Conferido com `themes(first: 10)` em 24/09/2026.
 
-- Tema de trabalho: **Cópia de DEV - Filtros, carrinho e celular 18-09**
-  (`gid://shopify/OnlineStoreTheme/166080315440`, cdn `/t/25/`), **não
-  publicado**. Cópia do publicado, feita pelo cliente em 23/09, já com a
-  tipografia nova do subtítulo do hero. O cliente vai publicá-lo.
-- No ar: **DEV - Filtros, carrinho e celular 18-09** (`145546182704`, cdn
-  `/t/24/`), publicado pelo cliente em 22/09. A API bloqueia escrita nele.
-- `145492672560` ("DEV - Ajustes visuais 27-08", cdn `/t/23/`) é o antigo
-  no ar, defasado desde 17/09. Os outros temas antigos não existem mais.
-- Preview: `https://loja.atratordiesel.com.br/?preview_theme_id=166080315440`
+- No ar: **DEV (mais recente)** (`gid://shopify/OnlineStoreTheme/166080315440`,
+  cdn `/t/25/`). É a "Cópia de DEV - Filtros, carrinho e celular 18-09" de
+  23/09, renomeada e publicada pelo cliente. A API bloqueia escrita nele.
+- `145546182704` ("DEV - Filtros, carrinho e celular 18-09", `/t/24/`) e
+  `145492672560` ("DEV - Ajustes visuais 27-08", `/t/23/`) estão
+  despublicados e **defasados**: não têm o que foi feito no `/t/25/`. Não
+  grave neles.
+- **O próximo ajuste de tema começa por uma cópia nova do `166080315440`**,
+  feita no admin (Loja virtual, Temas, Duplicar). Anote aqui o id e o cdn
+  da cópia antes de gravar.
 - Antes de gravar, confira sempre `themes(first: 10) { id name role }`.
-  Quando o `/t/25/` for publicado, ele para de aceitar gravação e o
-  próximo ajuste começa por uma cópia nova.
 
-O que muda no DEV daqui para frente **não** aparece no ar até o cliente
-publicar de novo. Exemplo: os rótulos novos da ficha (16/09) só existem no
-DEV, então no ar as linhas "Enxadas Rotativas" e "Mini Escavadeiras" das
-peças que usam esses rótulos não aparecem.
+O que muda no tema de trabalho **não** aparece no ar até o cliente publicar
+de novo.
 
 **Atenção ao que é tema e ao que é loja no ar.** Página de `/pages/`,
 política de `/policies/`, produto, coleção e configuração da Yampi são
@@ -397,6 +395,32 @@ for ligado ou se o telefone da ficha seguir errado.
   `pix_pct` 0 esconde a linha do Pix. Nota abaixo de 4,5 mostra só o número
   de avaliações.
 
+### 14. Catálogo: quatro respostas do cliente (achado em 24/09)
+
+Nada disso foi mexido; cada item espera uma decisão. Registro de 24/09.
+
+- **Estoque contra a lista de zerados.** A seção "Estoque zerado até
+  segunda ordem" de `catalogo-e-busca.md` manda manter em zero o 30508
+  (filtro de óleo Lombardini) e o 11352 (Conjunto do Pistão Agrale 4100).
+  Hoje o 30508 está com **14** (produto novo, criado à mão em 23/09) e o
+  11352 com **3**. Se foi o cliente que mandou voltar, apague os dois da
+  lista; se não, zere.
+- **Descrição do `Conjunto do Pistão Agrale 4100 / 4118 / 4120 STD`**
+  (8082827444272) foi trocada por um texto de anúncio do Mercado Livre
+  depois de 22/09 (última alteração do produto: 24/09, 03:55 de Brasília,
+  pelo admin). O texto novo diz "Vendido só o pistão, sem anéis, pino e
+  travas", e o título diz **Conjunto** e as etiquetas dizem `kit pistao` e
+  `anel de segmento`. Também só cita o 4120, e o metacampo tem 4100, 4118 e
+  4120. Um dos dois está errado; o cliente diz qual.
+- **O que ficou fora dos 9 Lombardini** pelas regras de compatibilidade:
+  "linha 9LD" e "LGW" no filtro de óleo 2175107 (regra 5, promessa larga em
+  peça que se confere pela rosca) e "Sileo 1000" e "Sileo 1400" no pistão
+  6501512 e na correia 2440338 (não foi possível confirmar o que são). Voltam
+  com o modelo exato.
+- **`Original` só entrou onde o cliente escreveu** (a bucha 1630038). Os
+  outros oito estão com marca Lombardini (Bosch no porta-injetor) e sem
+  `Original` no título. Se forem peças originais, o título ganha a palavra.
+
 \---
 
 ## Registros, dia a dia
@@ -407,6 +431,7 @@ tarefa e o diário era dois terços dele. Abra `registros.md` quando a
 pergunta for "por que isso ficou assim"; para trabalhar, o que está acima
 basta.
 
+- Registro de 24/09/2026: os 9 Lombardini padronizados, SEO desatualizado e tema publicado
 - Registro de 23/09/2026 (noite): cartao das marcas, hierarquia do banner, seta do localizador e o schema que some
 - Registro de 23/09/2026 (tarde): botão, menu, lista de modelos, faixa de marcas e o diário
 - Registro de 22/09/2026: busca por código, lista de modelos e a skill que faltava

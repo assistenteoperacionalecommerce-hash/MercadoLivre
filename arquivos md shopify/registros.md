@@ -9,6 +9,54 @@ ficou assim".
 
 Do mais novo para o mais velho, na ordem em que estavam.
 
+## Registro de 24/09/2026: os 9 Lombardini padronizados, SEO desatualizado e tema publicado
+
+Sessão na nuvem, pelo repositório do GitHub. Pedido: conferir se os `.md`
+estão certos e padronizar os produtos que faltaram.
+
+**1. O tema de trabalho foi publicado.** `themes(first: 10)` devolveu o
+`166080315440` como MAIN, com o nome "DEV (mais recente)". Os documentos
+ainda diziam que ele era o tema de trabalho despublicado. Hoje não existe
+tema de trabalho; `comece-por-aqui.md` e `instrucoes-do-projeto.md`
+corrigidos.
+
+**2. A skill `padronizar-produto-atd` não está ao alcance de sessão na
+nuvem.** A da conta aparece como desligada (`enabled: false`, desligada em
+23/09 pela interface, registro de 23/09 item 4), e a versão nova mora em
+`~/.claude/skills/` do computador do cliente, que a nuvem não enxerga. O
+padrão foi tirado de `catalogo-e-busca.md`, seções 1 e 2, e das peças já
+certas (camisas NS11 e AR160, pistão 4TNV86, filtro de óleo Agrale 4200).
+Para a próxima sessão na nuvem ter a skill: copiar o `SKILL.md` para este
+repositório ou religar a da conta.
+
+**3. A skill `poupar-tokens-print-shopify` está com tema velho.** Ela cita o
+tema `144975724592` e diz que o cdn `21` é o DEV e o `6` o publicado. Esse
+tema não existe mais. Correção é na conta do cliente, onde a skill mora.
+
+**4. Os 9 Lombardini criados à mão em 23/09.** Sem tipo, sem etiqueta, sem
+metacampo, sem SEO, título de anúncio e descrição do Mercado Livre.
+Padronizados; detalhe e regras novas em `catalogo-e-busca.md`, "Padronização
+de 24/09". Depois do metacampo, `tagsAdd` e `tagsRemove` de
+`atd-tmp-reindex` nos nove, pela regra 9. Lidos de volta: tipo, marca,
+etiquetas, metacampo e SEO gravados, e as peças entraram sozinhas em
+Filtros, Bronzinas e Pistões.
+
+**Não foi possível conferir a faceta pela URL da loja**: a rede da sessão na
+nuvem recusa `loja.atratordiesel.com.br` (proxy, 403). Na próxima sessão com
+navegador, confira
+`/collections/lombardini?filter.p.m.custom.modelos_compativeis=LDW%201003`,
+que deve devolver 6 peças (bucha, filtro de óleo, bronzina, correia,
+filtro de ar LDW e conjunto do pistão), mais os 4 links de recomendação.
+
+**5. SEO desatualizado em 31 produtos.** Ver `catalogo-e-busca.md`.
+
+**6. Quatro achados que esperam o cliente**, em `comece-por-aqui.md`, item
+14: estoque do 30508 e do 11352 contra a lista de zerados, a descrição do
+Conjunto do Pistão Agrale 4100 que virou texto do ML e contradiz o título,
+os modelos que ficaram fora dos Lombardini e o `Original`.
+
+---
+
 ## Registro de 23/09/2026: texto novo do hero e o editor que não salvava
 
 Pedido: trocar título e subtítulo do hero por "Máquina parada custa caro" e

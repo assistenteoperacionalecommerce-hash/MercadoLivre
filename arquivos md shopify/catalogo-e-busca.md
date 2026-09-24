@@ -88,8 +88,9 @@ aparecem nas duas marcas. Peça TC nova precisa da etiqueta `agritech`.
 
 ## 3. Coleções e mega menu
 
-O catálogo tem **127 produtos**, todos com etiqueta igual ao campo "Tipo de
-produto", o que liga a URL nativa `/collections/marca/tipo` sem app nenhum.
+O catálogo tem **140 produtos** (contados em 24/09/2026), todos com etiqueta
+igual ao campo "Tipo de produto", o que liga a URL nativa
+`/collections/marca/tipo` sem app nenhum.
 
 13 coleções automáticas criadas e publicadas: Yanmar 75, Tobatta 14, Branco
 12, Agrale 10, Lavrale 6, Anéis 21, Juntas 17, Filtros 13, Bronzinas 11,
@@ -154,6 +155,67 @@ código em mais de um endereço, e a soma do ESTOQUE LOJA de todos os endereços
 é o total. Única exceção: 118057 (filtro de ar principal 3TNV88 / 4TNV88),
 13 no total e só 1 no endereço de loja. Pendentes no ERP: 4870 e 4280, duas
 unidades cada.
+
+### Padronização de 24/09
+
+Varredura dos 140 produtos contra o padrão das seções 1 e 2. Backup do que
+mudou em `backup-padronizacao-24-09.json`, tudo gravado sem `userErrors`.
+
+**Os 9 Lombardini criados à mão em 23/09** estavam sem tipo, sem etiqueta,
+sem metacampo e sem SEO, com título de anúncio (`Filtro De Óleo Lombardini
+LDW 903 1003 12LD 475 2175107`) e descrição do Mercado Livre ("perguntas do
+anúncio", bloco "SOBRE A TRATOR DIESEL"). Sem etiqueta igual ao tipo, as
+URLs `/collections/lombardini/<tipo>` davam a marca inteira (o erro
+silencioso da seção 2). Agora:
+
+|SKU|título|tipo|
+|-|-|-|
+|30450|Bucha do Pé de Biela Lombardini LDW 1003 Original|Bucha|
+|30390|Porta-Injetor Completo Lombardini 12LD 475-2 (marca Bosch)|Porta-Injetor|
+|30508|Filtro de Óleo Lombardini LDW 903 / LDW 1003 / 12LD 475-2|Filtro|
+|34615|Bronzina de Mancal Lombardini LDW 1003 / LDW 1404 0,50|Bronzina de Mancal|
+|30469|Correia Dentada da Distribuição Lombardini LDW 903 / LDW 1003|Correia|
+|31205|Pistão Lombardini 9LD 625-2 / 9LD 626-2 / 11LD 625-3 / 11LD 626-3 STD|Pistão|
+|12001|Elemento do Filtro de Ar Lombardini LDW 702 / LDW 903 / LDW 1003|Filtro|
+|30259|Elemento do Filtro de Ar Lombardini 15LD 225|Filtro|
+|30443|Conjunto do Pistão Lombardini LDW 702 / LDW 1003 / LDW 1404 STD|Pistão|
+
+Bucha, Correia e Porta-Injetor são tipos novos, sem coleção própria (como
+Bomba e Rotor). O mega menu os pega por `all_types`. Se o cliente quiser
+coleção ou chip para eles, é a regra das três listas de `tema-e-design.md`,
+num tema de trabalho novo.
+
+**Regras que valem para peça Lombardini daqui para frente:**
+
+- **Código Kohler (`ED00...-S`), código Agrale (`7065....`), código
+  substituto e código antigo vão só para etiqueta.** É equivalência de
+  fabricante. Na ficha, a linha `SKU:` leva o código Lombardini sem ponto
+  (`2175107`); a forma com ponto (`2175.107`) vai para etiqueta.
+- **Os nomes Kohler do mesmo motor (KDW 1003, KD625/2) vão só para
+  etiqueta**, pela mesma lógica de NS e NSB (regra 4b): é o mesmo motor com
+  outro nome.
+- **O `-2` e o `-3` de `12LD 475-2` e `9LD 625-2` ficam.** É o número de
+  cilindros e faz parte do nome do modelo. Não é extensão de aplicação.
+- **`LDW 1204/T` se escreve `LDW 1204T`** na ficha e no metacampo. A ficha
+  quebra pastilha na barra e sairia "LDW 1204" e "T".
+- O texto útil do anúncio (medida, quantas peças o motor usa, o que vem na
+  caixa) foi para `Conteúdo:` e `Observações:`. "Para que serve" e o bloco
+  institucional saíram.
+
+**SEO desatualizado em 31 produtos.** As rodadas de 21 e 22/09 mudaram
+título, ficha e metacampo e deixaram a descrição de SEO (o texto que o
+Google mostra) com o valor antigo. Ela ainda prometia NSB e sufixos R e RE
+em 21 peças da linha NS, `T12` no anel AR100, `BS180` no pistão AR140, `M90`
+no anel TR9, `M85` e `M80` no anel M90, `AS160` a `AS220` no anel AR160,
+`AR120` no anel TR10, `NB10` no anel B10 / NB13 e "motores Ruggerini" no
+pistão Agrale 4100. Mais dois acertos menores: o anel AR140 / AS140 não
+citava o AS140, e a bomba injetora BD 5.0 / BD 7.0 dizia "e outros" sem ter
+outros. Reescritas a partir do título e do metacampo de hoje, mantendo o fim
+de cada uma ("Retirada em Goiânia..." ou "Envio para todo o Brasil").
+
+**Regra que fica: mudou título ou compatibilidade, reescreva o SEO na mesma
+gravação.** Nenhuma rodada anterior fazia isso, e o erro não aparece na
+loja, só no Google.
 
 ### Estoque zerado até segunda ordem (decisão do cliente, 16/09/2026)
 
