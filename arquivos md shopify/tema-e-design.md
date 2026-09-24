@@ -963,6 +963,95 @@ Três coisas para não esquecer:
 Medido em 390, 768, 990 e 1440, com peça em estoque e peça esgotada: topo 0px
 e fim 0px em todas. Botão de comprar a 1440 subiu de y=889 para y=692.
 
+### "Peças para o mesmo motor" só pelo motor (24/09/2026, tema de trabalho `166112100400`)
+
+Relato do cliente, com print do Conjunto do Pistão Agrale 4100 / 4118 /
+4120: "diz que ele serve para os motores MD, porém lá embaixo, no peças para
+o mesmo motor, estão os Agrale M90, M85... são o mesmo motor?" Não são. O
+MD é Ruggerini de 2 cilindros; o M80, o M85 e o M90 são Agrale de 1. A
+seção `sections/atd-mesmo-motor.liquid` casava a peça com qualquer outra
+que dividisse **um valor qualquer** do metacampo, e o metacampo tem trator,
+microtrator e escavadeira junto com motor. O trator Agrale 4100 saiu de
+fábrica com mais de um motor, e o Agrale 4200 também (M790 e MAN).
+
+Simulado nas 118 peças com metacampo, com a mesma ordem e o mesmo limite de
+8 da seção: **69 sugestões erradas em 30 páginas**. As de outro motor:
+
+- pistão MD com bronzina, anel e junta do M80 / M85 / M90, e o inverso
+  (pelo "Agrale 4100");
+- filtro de óleo do Agrale 4200 com motor MAN no meio das oito peças do
+  M790 / M93, e o inverso (pelo "Agrale 4200");
+- junta do M790 (2 cilindros) na página da junta do M93 (1 cilindro), e o
+  inverso;
+- virabrequim 4TNV88 XAT na página do virabrequim 4TNV88 comum, que diz
+  "Não é compatível com o modelo 4TNV88-XAT", e nos filtros e anéis do
+  4TNV88;
+- filtro de combustível NS50 / NS75 / NS90 nas páginas de camisa, anel e
+  pistão B9 / NB10, só porque os dois citam o microtrator TC10.
+
+O resto era peça de microtrator (cabo da direção, cabo de embreagem, faca
+da roçadeira TA73) e a sapata da VIO20 aparecendo como "peça do mesmo
+motor".
+
+**Regra nova da seção**: casa pela linha `Motores Compatíveis:` da
+descrição, dos dois lados. A peça da página e a candidata precisam ter pelo
+menos um motor escrito igual nessa linha. O metacampo continua fazendo o
+primeiro corte, e só a candidata que passa nele tem a descrição lida. Sem
+linha de motor, vale `Microtratores Compatíveis:` e o título vira "mesmo
+microtrator". Sem nenhuma das duas, a seção não mostra peça. Linha que
+começa com "Todos os modelos" (cabo do acelerador Tobatta) vale pela lista
+do metacampo.
+
+Conferido fora da loja, com o liquidjs rodando o arquivo novo contra as 118
+peças: **zero sugestões erradas** e as mesmas listas da simulação em todas
+as páginas. O título fica "mesmo motor" em 96 páginas e "mesmo microtrator"
+em 8 (cabos, capa, decalques, lona, juntas da caixa, faca TA73), e 14
+páginas ficam sem a seção porque nenhuma outra peça tem o mesmo motor. O
+pistão MD é uma delas, porque a loja não tem outra peça de motor MD. Arquivo
+gravado igual ao testado (md5 `bf3ec65f...`, 14.940 bytes; no ar é
+`8914fd72...`). **Conferido no preview em 24/09** (fim da noite), lendo o
+HTML das 118 páginas servidas pelo tema `166112100400`: 523 cartões, nenhum
+sem motor em comum com a página, e os mesmos 96 / 8 / 14.
+
+A coleção `pecas-agrale-m790-m93` tinha a mesma falha, nas regras "Agrale
+4200" e "Agrale 4300", e mostrava o filtro do motor MAN. As duas regras
+saíram (é loja, vale no ar na hora): 9 para 8 peças. Regra que fica:
+**coleção "Peças para <motor>" só tem regra de motor**, nunca de trator.
+
+### A linha Observação (24/09/2026, tema de trabalho `166112100400`)
+
+Pedido do cliente, com print do pistão Agrale 4100: "a parte da observação
+continua não formatada... preciso que se integre junto às outras". A linha
+saía em `.atd-ficha__obs` com fio dourado de 2px à esquerda, recuo de 10px
+e Inter 14px peso 400: a única linha da ficha com moldura própria e letra
+menor que as outras.
+
+Em `blocks/atd_produto_ficha.liquid`, item 10 do histórico:
+
+- `.atd-ficha__obs` perdeu o fio e o recuo e herda o 15px e a tinta do
+  `.atd-ficha__valor`, em **peso 500**. O tema só carrega Inter 400, 500,
+  700 e 800; 600 cairia no 700 e pesaria como as pastilhas.
+- **Uma frase por linha**: cada `<li>` do bloco Observações vira um
+  `.atd-ficha__obs-item`. Para isso a descrição ganha uma quebra de linha
+  depois de cada `</li>` antes do `strip_html` (a captura `atd_quebra`).
+  Antes, "Filtro rosqueado, rosca M20 x 1,5." e "Diâmetro externo de cerca
+  de 78 mm." saíam emendadas numa linha só, e numa descrição sem quebra no
+  HTML (Cobertura do Radiador NS18) sairiam coladas, sem espaço.
+
+Conferido fora da loja, porque a rede da sessão bloqueia o domínio: o
+bloco foi renderizado com liquidjs contra as descrições reais (pistão Agrale
+4100, filtro 2175107, cobertura NS18 com um segundo item de teste,
+virabrequim 4TNV88 com `<br>` solto) e medido no Chromium com Inter
+400/500/700/800. Todas as outras linhas saíram iguais ao antes, byte a byte.
+Observação: 15px, peso 500, sem borda, começando no mesmo x das pastilhas
+(116 no quadro de teste, igual às outras seis linhas). O arquivo gravado
+bate com o testado (md5 `d803a77f...`). No preview (24/09, fim da noite)
+o HTML confere: as 29 frases de Observação das 19 fichas saem uma por
+`atd-ficha__obs-item`, dentro da linha "Observação", entre as outras linhas
+da ficha. **Falta a medida em pixel** a 390, 990 e 1440: o Chromium desta
+máquina não confia no certificado do proxy, e abrir ignorando o
+certificado não se faz.
+
 ### O localizador virou lista própria (23/09/2026)
 
 `<select>` nativo não aceita folha na lista: quem desenha é o sistema

@@ -14,12 +14,18 @@ está montado e as armadilhas já medidas.
 Regras que não mudam
 
 Trabalhe só no tema despublicado, e confira qual é ele antes de gravar:
-`themes(first: 10) { id name role }`. Desde 23/09/2026 o de trabalho é
-gid://shopify/OnlineStoreTheme/166080315440 ("Cópia de DEV - Filtros,
-carrinho e celular 18-09", cdn /t/25/). O publicado nunca é tocado; o
-conector recusa gravar nele. Quando o cliente publicar o /t/25/, o próximo
-ajuste começa por uma cópia nova. Preview:
-https://loja.atratordiesel.com.br/?preview_theme_id=166080315440
+`themes(first: 10) { id name role }`. Desde 24/09/2026 o
+gid://shopify/OnlineStoreTheme/166080315440 ("DEV (mais recente)", cdn
+/t/25/) está publicado. O tema de trabalho é a cópia dele de 24/09 à noite,
+gid://shopify/OnlineStoreTheme/166112100400 ("DEV - Observação na ficha
+24-09"), à espera de o cliente publicar; depois disso, o próximo ajuste
+começa por uma cópia nova (`themeDuplicate` ou, no admin, Temas,
+Duplicar). O publicado nunca é tocado; o conector recusa gravar nele. Os
+outros dois temas despublicados (145546182704 e 145492672560) são antigos e
+defasados.
+
+Produto novo segue o padrão de `catalogo-e-busca.md`, seções 1 e 2. Mudou
+título ou compatibilidade, reescreva a descrição de SEO junto.
 
 Preserve inteiro o bloco do checkout Yampi em layout/theme.liquid, entre os
 comentários "Não remova. Checkout Yampi.".

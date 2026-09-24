@@ -1,4 +1,4 @@
-# Comece por aqui (atualizado 23/09/2026)
+# Comece por aqui (atualizado 24/09/2026)
 
 > Datas: registros antigos marcados 16/09 e 17/09 foram feitos em 15/09/2026,
 > pela data do sistema. A partir da rodada de 16/09 à tarde, a data é a real.
@@ -6,25 +6,34 @@
 Documento de passagem. Sessão nova lê este primeiro.
 **A lista de pendências deste documento é a única que vale.**
 
-**Mudou em 23/09: tema de trabalho novo.**
+**Mudou em 24/09: o tema de trabalho foi publicado, e à noite saiu uma
+cópia nova dele para arrumar a linha Observação da ficha.** Conferido com
+`themes(first: 10)` em 24/09/2026.
 
-- Tema de trabalho: **Cópia de DEV - Filtros, carrinho e celular 18-09**
-  (`gid://shopify/OnlineStoreTheme/166080315440`, cdn `/t/25/`), **não
-  publicado**. Cópia do publicado, feita pelo cliente em 23/09, já com a
-  tipografia nova do subtítulo do hero. O cliente vai publicá-lo.
-- No ar: **DEV - Filtros, carrinho e celular 18-09** (`145546182704`, cdn
-  `/t/24/`), publicado pelo cliente em 22/09. A API bloqueia escrita nele.
-- `145492672560` ("DEV - Ajustes visuais 27-08", cdn `/t/23/`) é o antigo
-  no ar, defasado desde 17/09. Os outros temas antigos não existem mais.
-- Preview: `https://loja.atratordiesel.com.br/?preview_theme_id=166080315440`
+- No ar: **DEV (mais recente)** (`gid://shopify/OnlineStoreTheme/166080315440`,
+  cdn `/t/25/`). É a "Cópia de DEV - Filtros, carrinho e celular 18-09" de
+  23/09, renomeada e publicada pelo cliente. A API bloqueia escrita nele.
+- `145546182704` ("DEV - Filtros, carrinho e celular 18-09", `/t/24/`) e
+  `145492672560` ("DEV - Ajustes visuais 27-08", `/t/23/`) estão
+  despublicados e **defasados**: não têm o que foi feito no `/t/25/`. Não
+  grave neles.
+- **Tema de trabalho: "DEV - Observação na ficha 24-09"**
+  (`gid://shopify/OnlineStoreTheme/166112100400`), cópia do `166080315440`
+  feita em 24/09 à noite com `themeDuplicate` (o conector ainda deixa). As
+  diferenças para o do ar são dois arquivos: `blocks/atd_produto_ficha.liquid`
+  (a linha Observação; md5 `d803a77fa18abbdc4ec79aaa9b7e09e5`, 30.285 bytes,
+  contra `7d3392a09082a8272d00630a0ad8be23`, 28.765 no ar) e
+  `sections/atd-mesmo-motor.liquid` ("Peças para o mesmo motor" só pelo
+  motor; md5 `bf3ec65f7ec5a9b13ff84a72effecf1c`, 14.940 bytes, contra
+  `8914fd72e67a5d0836108ecd1b2649a6`, 10.166 no ar). O cdn não foi
+  conferido, porque a rede da sessão bloqueia o domínio da loja. **Espera o
+  cliente olhar o preview e publicar.** Enquanto não for publicado, o
+  próximo ajuste de tema entra nele; publicado, o próximo começa por uma
+  cópia nova.
 - Antes de gravar, confira sempre `themes(first: 10) { id name role }`.
-  Quando o `/t/25/` for publicado, ele para de aceitar gravação e o
-  próximo ajuste começa por uma cópia nova.
 
-O que muda no DEV daqui para frente **não** aparece no ar até o cliente
-publicar de novo. Exemplo: os rótulos novos da ficha (16/09) só existem no
-DEV, então no ar as linhas "Enxadas Rotativas" e "Mini Escavadeiras" das
-peças que usam esses rótulos não aparecem.
+O que muda no tema de trabalho **não** aparece no ar até o cliente publicar
+de novo.
 
 **Atenção ao que é tema e ao que é loja no ar.** Página de `/pages/`,
 política de `/policies/`, produto, coleção e configuração da Yampi são
@@ -32,6 +41,9 @@ conteúdo da loja: mexeu, mudou no ar na hora, mesmo com o tema DEV
 despublicado. Só arquivo de tema fica represado até a publicação.
 
 **Use a skill `poupar-tokens-print-shopify` sempre que trabalhar aqui.**
+
+**Padrão de produto, campo por campo**: `catalogo-e-busca.md`, seção 2.
+Vale mesmo sem a skill `padronizar-produto-atd`, que não abre na nuvem.
 
 \---
 
@@ -41,7 +53,7 @@ despublicado. Só arquivo de tema fica represado até a publicação.
 |-|-|
 |`comece-por-aqui.md`|sempre, primeiro|
 |`tema-e-design.md`|paleta, tipografia, régua, home, cabeçalho, mega menu, celular, página de produto, SEO, diferenças entre DEV e publicado|
-|`catalogo-e-busca.md`|título de produto, ficha, etiqueta, coleção, mega menu por marca e tipo, busca da Shopify, ERP Ensis|
+|`catalogo-e-busca.md`|**padrão de produto campo por campo (seção 2)**, título, ficha, etiqueta, coleção, mega menu por marca e tipo, busca da Shopify, ERP Ensis|
 |`yampi-checkout-e-catalogo.md`|cupom, order bump, upsell, carrinho abandonado, pagamento, frete, dados da Yampi|
 |`paginas-institucionais.md`|políticas, fale conosco, faixa de fatos, acertos de interface do produto, faixa do vídeo|
 |`registros.md`|o diário, dia a dia. Só quando a pergunta for "por que isso ficou assim"|
@@ -279,7 +291,9 @@ por alguns minutos depois do redirecionamento criado. Confira com
 - **Preço das peças fora da planilha**: B-205 0,50, B-204 1,00 e B-208 1,00
   (variantes de bronzina), NS18C.44821, TC14.62100, 10H1, 5431 e NS18.01336 P.
   Resolvidos em 17/09: 112776 fica em R$ 110 (já na planilha); 48385
-  (129630.55731), 30508 e 3486 estão zerados e **continuam zerados**, sem aviso.
+  (129630.55731) e 3486 estão zerados e **continuam zerados**, sem aviso. O
+  30508 saiu dessa lista em 24/09: o cliente disse que o estoque dele está
+  certo.
 - **Filtro "Modelo da máquina" nas coleções**: o dado está pronto
   (metafield `custom.modelos_compativeis` nas 109 peças com compatibilidade).
   Falta o cliente ligar no app Search & Discovery (o admin pede login no
@@ -397,6 +411,98 @@ for ligado ou se o telefone da ficha seguir errado.
   `pix_pct` 0 esconde a linha do Pix. Nota abaixo de 4,5 mostra só o número
   de avaliações.
 
+### 14. Catálogo: as quatro respostas do cliente (24/09), fechado
+
+O cliente respondeu no mesmo dia e está gravado. Detalhe em
+`catalogo-e-busca.md`, "Respostas do cliente, 24/09".
+
+- ~~Estoque do 30508 e do 11352 contra a lista de zerados~~: **o estoque de
+  hoje está certo** (14 e 3). Os dois saíram da lista de zerados.
+- ~~Descrição do Conjunto do Pistão Agrale 4100~~: **vem com anéis, pino e
+  travas**. O texto do ML saiu e a ficha voltou ao padrão.
+- ~~Modelos fora dos Lombardini~~: o cliente mandou pôr só o que for
+  certo. Entrou `Sileo 1000` e `Sileo 1400` no pistão 6501512 e na correia
+  2440338. `linha 9LD` e `LGW` continuam fora do filtro de óleo 2175107.
+- ~~`Original`~~: **todas as peças Lombardini são originais**; os oito
+  títulos que faltavam ganharam a palavra.
+
+O que sobrou foi respondido na mesma noite: item 15.
+
+### 15. Respostas do cliente, 24/09 (noite)
+
+Detalhe em `catalogo-e-busca.md`, "Respostas do cliente, 24/09 (noite)".
+Backup em `backup-padronizacao-24-09.json`, chave `terceira_rodada`.
+
+- ~~Sileo no título do pistão 6501512~~: **a regra 2 estava errada.** O
+  título leva só os principais modelos, e a ficha e o metacampo levam
+  todos. O Sileo fica na ficha, e o título não muda.
+- ~~Motores MD no filtro do pistão Agrale 4100~~: **gravado.** O metacampo
+  tem `MD170, MD171, MD190, MD191, Agrale 4100, Agrale 4118, Agrale 4120`,
+  e o SEO cita os motores. Reindexado.
+- ~~"O motor usa 2 conjuntos" num produto de quatro motores~~: **reescrito**
+  em cinco produtos, no formato `Vai 1 por cilindro: o LDW 702 leva 2...`.
+- ~~Observação sem formatação~~: **tema de trabalho `166112100400`**,
+  esperando o cliente publicar. Ver "Tema" no topo.
+- **Fonte de compatibilidade (regra nova)**: só catálogo oficial e original
+  do fabricante confirma modelo. Revenda não confirma.
+
+**O que sobrou para conferir:**
+
+- **Rede da sessão (24/09, fim da noite).** O cliente liberou uma lista de
+  domínios, não a rede toda. Abrem: `iservice.lombardini.it`,
+  `www.agrale.com.br` e `loja.atratordiesel.com.br`. Não abrem:
+  `pdf.agrale.com.br` e `www.lombardini.it` (conexão cortada),
+  `blog.agrdistribuidora.com.br` (fora da lista; é onde está o PDF do
+  catálogo de peças "Trator Agrale 4120 Motor Ruggerini") e `yanmar.com`
+  (o próprio site recusa, "Access Denied"). Cópia do Internet Archive de
+  página oficial: **a regra de segurança do ambiente barrou**; não tentar
+  de novo. As fichas antigas do 4100 / 4118 / 4120 saíram do site da
+  Agrale (o endereço `/pdf/pt/...` dá 404, e os downloads de hoje, 1 a 200,
+  são só da linha atual). Contornar bloqueio não se faz. Caminhos
+  legítimos: o cliente acrescenta o domínio em Acesso à rede, ou baixa o
+  PDF e sobe numa pasta `catalogos/` do repositório.
+- **"Agrale 4100" no Conjunto do Pistão MD (8082827444272): em aberto, não
+  é "provável erro".** Em 24/09 (noite) isso foi dado como provável erro
+  pelo resumo de uma busca. Estava forte demais: em 21/09 o catálogo
+  oficial de peças da Agrale foi lido, e ele é um só para `4100.4 HSE /
+  4100 HSE / 4100 SEI / 4100 E HSE / 4120 HSE / 4120 SEI / 4118.4`, com três
+  motores dentro (ver `catalogo-e-busca.md`, "Motor não é marca"). A
+  ficha oficial do 4100 Industrial de hoje diz "Agrale 1 cilindro", mas é
+  o trator atual, não as versões antigas. Falta ver no catálogo **qual
+  motor vai em cada trator**. Não mexer até lá.
+- **Juntas M93 com "Tratores: Agrale 4200, Agrale 4300"**: conferir no
+  mesmo catálogo em quais tratores o M93 vai.
+- **Virabrequim 4TNV88 XAT** (7927664050224): a ficha diz `4TNV88 XAT` e o
+  metacampo diz `4TNV88` (regra 4, de 21/09). Por isso ele aparece no filtro
+  "4TNV88" e na coleção do 3TNV88 / 4TNV88, e o virabrequim comum diz que
+  não serve no XAT. A faixa do mesmo motor já não mistura os dois. Decisão
+  do cliente: exceção à regra 4 (metacampo `4TNV88 XAT`) ou fica como está.
+- **Microtrator das peças NS11**: camisa e bronzina NS11 dizem `TC11, TC14`,
+  o jogo de anéis NS11 / NS12 diz só `TC11`.
+- **Filtro de combustível NS50 / NS75 / NS90 / TC14**: tem o microtrator
+  `TC10` e não tem os motores `B9` e `NB10`, que são os do TC10 nas outras
+  peças.
+- ~~O `12LD 475-2` do filtro de óleo 2175107~~: **confirmado, fica.** O
+  desenho oficial D do 12LD 475-2 dá o 2175.107 (59 mm) e o 2175.131 (90 mm)
+  como alternativas na mesma posição. A dúvida veio de um link errado do
+  i-service. Ver `catalogo-e-busca.md`, "Conferência no catálogo oficial
+  Lombardini".
+- ~~Sileo 1000 / 1400 no pistão 6501512 e na correia 2440338~~:
+  **confirmado** nos desenhos B e D do SILEO (pistão: 3 e 4; correia: 1).
+- **Bronzina de mancal 1611195**: o desenho E dá **5 no LDW 1404**.
+  Proposta, esperando o OK do cliente: a observação passa a `Vai 1 por
+  mancal: o LDW 1003 leva 4 e o LDW 1404 leva 5.`
+- **Conteúdo do PISTON SET** (6501512 diz com anéis, pino e travas; 6500272
+  diz só o pistão) e **bico no porta-injetor 6615045**: o catálogo oficial
+  não responde. Conferir na caixa em estoque.
+- **ACME AD230 no filtro 2175180**: sem fonte oficial.
+- ~~Faceta~~: **conferida em 24/09.** LDW 1003 devolve 6, Sileo 1000
+  devolve 2, MD170 devolve o pistão MD e 12LD 475-2 devolve 2.
+- ~~Preview do tema de trabalho~~: **medido em 24/09** nas 118 páginas
+  reais: 523 cartões na faixa, nenhum sem motor em comum com a página;
+  títulos 96 "motor", 8 "microtrator", 14 sem faixa; as 29 linhas de
+  Observação das 19 fichas aparecem. Falta só o cliente publicar.
+
 \---
 
 ## Registros, dia a dia
@@ -407,6 +513,10 @@ tarefa e o diário era dois terços dele. Abra `registros.md` quando a
 pergunta for "por que isso ficou assim"; para trabalhar, o que está acima
 basta.
 
+- Registro de 24/09/2026 (fim da noite): catálogos oficiais com a rede liberada
+- Registro de 24/09/2026 (noite, segunda mensagem): "Peças para o mesmo motor" misturava motores
+- Registro de 24/09/2026 (noite): regra do título, motores MD no filtro, observações por cilindro e a linha Observação da ficha
+- Registro de 24/09/2026: os 9 Lombardini padronizados, SEO desatualizado e tema publicado
 - Registro de 23/09/2026 (noite): cartao das marcas, hierarquia do banner, seta do localizador e o schema que some
 - Registro de 23/09/2026 (tarde): botão, menu, lista de modelos, faixa de marcas e o diário
 - Registro de 22/09/2026: busca por código, lista de modelos e a skill que faltava

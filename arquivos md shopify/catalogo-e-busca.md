@@ -16,7 +16,8 @@ modelos separados por " / ", mais a medida.
 
 - Códigos de motor em caixa alta: NS11, TC14, 3TNV88, B4T.
 - Medida logo depois dos modelos: STD, 0,25, 0,50.
-- `Original <Marca>` só onde já era verdade.
+- `Original` no fim do título quando a peça é original, depois da medida
+  (`... NS11 STD Original`). Todas as Lombardini são (cliente, 24/09).
 - **Nunca travessão.** Vírgula, ponto ou parênteses.
 - Exceção: as 8 lâminas de enxada rotativa levam o fabricante no fim do
   título, senão Fardin e Balbinot ficariam idênticas.
@@ -39,10 +40,181 @@ SKU `NS18.01336 P`: o "P" faz parte do código real.
 
 ## 2. Cadastro de produto novo
 
-A tabela de campo por campo é a skill `padronizar-produto-atd`, escrita em
-22/09/2026 a partir de três peças já certas do catálogo (camisa NS11, camisa
-AR160 e elemento de filtro 4TNV88). Invoque com o código interno, endereço ou
-título da peça. Fica aqui só o que não é tabela de skill:
+**Este é o padrão completo, campo por campo** (escrito em 24/09/2026). Até
+então ele morava só na skill `padronizar-produto-atd`, que fica na conta e
+no computador do cliente e não abre em sessão na nuvem. Tirado do que está
+gravado hoje nas peças certas (camisas NS11 e AR160, pistão B9, filtro de
+óleo Agrale 4200, os 9 Lombardini de 24/09) e das regras deste arquivo. Se
+a skill disser outra coisa, alinhe as duas com o cliente.
+
+### Título
+
+`peça + marca da máquina + modelos separados por " / " + medida + Original`
+
+- Peça no nome já unificado (seção 1) e no singular: `Pistão`, `Camisa do
+  Cilindro`, `Bronzina de Mancal`, `Elemento do Filtro de Ar`. Conjunto com
+  anéis, pino e travas é `Conjunto do Pistão`.
+- Marca da **máquina** (Yanmar, Agrale, Tobatta, Branco, Lavrale,
+  Lombardini), não a do fabricante da peça.
+- Modelos em caixa alta, como na plaqueta: `NS11`, `LDW 1003`, `12LD 475-2`,
+  `B4T 13.0`. **O título leva só os principais**, para não ficar comprido;
+  a lista inteira vai na ficha e no metacampo. Vale para toda peça, pistão,
+  anel e camisa inclusive (cliente, 24/09: "não precisa colocar o título
+  muito longo, apenas as principais e na ficha coloque todas"). Exemplo: o
+  Conjunto do Pistão 6501512 tem `LDW 702 / LDW 1003 / LDW 1404` no título
+  e `Sileo 1000` e `Sileo 1400` só na ficha.
+- Medida depois dos modelos: `STD`, `0,25`, `0,50`.
+- `Original` no fim, quando for original.
+- Nunca: código da peça, "Motor", "para", "Kit", travessão.
+
+Exemplos: `Camisa do Cilindro Yanmar NS11 STD Original`, `Bronzina de Mancal
+Lombardini LDW 1003 / LDW 1404 0,50 Original`, `Filtro de Óleo Agrale 4200 /
+MAN / Valmet`.
+
+### Marca (campo Fornecedor)
+
+O fabricante **real** da peça: `Yanmar` na camisa NS11 original, `Centrinel`
+na camisa AR160, `Bosch` no porta-injetor Lombardini. Sem fabricante
+conhecido, `1ª Linha`. Aparece na ficha, nunca no título.
+
+### Tipo de produto
+
+Um dos que já existem, escrito igual (41 em 24/09): Anel de Plantadeira,
+Anéis, Balança, Bloco, Bomba, Bronzina de Biela, Bronzina de Mancal, Bucha,
+Cabo, Cachimbo, Cachorrete, Caixa do Ventilador, Camisa, Capa da Correia,
+Carcaça, Carretel, Cobertura do Radiador, Correia, Coxim, Decalque, Disco
+de Plantadeira, Engrenagem, Escapamento, Faca para Rotativa, Faca para
+Roçadeira, Filtro, Juntas, Lona da Embreagem, Mancal de Encosto, Manivela,
+Mola, Parafuso, Pistão, Porta-Injetor, Regulador, Retentor, Rolamento,
+Rotor, Sapata, Virabrequim, Válvula.
+
+Tipo novo só quando nenhum serve. Ele precisa da etiqueta igual e, se o
+cliente quiser coleção ou chip, das três listas de `tema-e-design.md`.
+
+### Etiquetas
+
+1. **O tipo, escrito igual** (`Pistão`). Obrigatória: sem ela
+   `/collections/marca/tipo` devolve a marca inteira (erro silencioso,
+   abaixo).
+2. **Como o balcão e o cliente chamam a peça**, sem acento: `embolo`,
+   `conjunto de pistao`, `kit pistao`, `pistao 75mm`, `luva do cilindro`.
+3. **Cada modelo em minúsculas**, com e sem espaço quando tem espaço:
+   `ldw 1003`, `ldw1003`, `ns11`.
+4. **Equivalência, que nunca é texto visível**: outro nome do mesmo motor
+   (`nsb11`, `kdw 1003`, `kd625/2`, `tobata ar160`), código do fabricante
+   com e sem ponto (`6501512`, `6501.512`), código Kohler e Agrale,
+   código substituto e antigo, referência cruzada de filtro (`w920`,
+   `psl171`). Marca de motor que não é modelo (`ruggerini`) também mora
+   aqui.
+5. `agritech` em toda peça de microtrator TC (a coleção Agritech é por
+   etiqueta).
+
+Não gaste etiqueta com acento ou caixa: a Shopify junta `valvula` e
+`Válvula`.
+
+### Descrição
+
+Dois blocos, cada um com título em negrito e lista. Nada fora deles.
+
+```html
+<p><strong>Especificações:</strong></p>
+<ul>
+<li>SKU: 6501512</li>
+<li>Motores Compatíveis: LDW 702, LDW 1003, LDW 1404</li>
+<li>Medida: STD, 75 mm</li>
+<li>Conteúdo: pistão, pino, travas e jogo de anéis</li>
+</ul>
+<p><strong>Observações:</strong></p>
+<ul>
+<li>Uma frase por item.</li>
+</ul>
+```
+
+- **`SKU:`** é o **código do fabricante** (`NS11.01111`, `16A11`,
+  `7072.004.007.00.3`, `6501512` sem ponto na Lombardini). Não é o código
+  interno do ERP, que fica no SKU da variante.
+- **Linhas de compatibilidade**, uma por rótulo, sempre `<Rótulo>
+  Compatíveis:`: `Motores`, `Microtratores` (só os TC), `Tratores` (trator de
+  verdade, com a marca, `Agrale 4200`), `Motogeradores`, `Geradores`, `Mini
+  Escavadeiras`, `Câmbios`. Valores separados por vírgula, só o modelo, sem
+  "Motor", sem a marca na frente (a não ser que o modelo a inclua, `Valmet
+  88`), sem parêntese, sem "todos os modelos". O que entra e o que sai é a
+  "Regra da compatibilidade", mais abaixo.
+- **`Medida:`** e **`Conteúdo:`** só quando a peça tiver. Conteúdo diz o
+  que vem e o que não vem (`só o pistão, sem anéis, pino e travas`).
+- **Observações** é bloco próprio, uma frase por item: quantas vão no
+  motor, rosca e diâmetro, versão do motor, explicação que não cabe no
+  valor. Cada item sai numa linha própria na ficha da página.
+- **Quantas vão no motor** diz de qual motor fala: `Vai 1 por cilindro: o
+  LDW 702 leva 2, o LDW 1003 leva 3 e o LDW 1404 leva 4.`, ou, com o mesmo
+  número para todos, `Os quatro motores MD têm 2 cilindros e levam 2
+  conjuntos.` Nunca "O motor usa 2" numa peça de vários motores, que não
+  diz qual motor (cliente, 24/09). Sem a conta de um dos motores, não
+  escreva a dele.
+  Nunca `<li>Observações: ...</li>` dentro de Especificações, que sai sem
+  negrito e colado na ficha (cliente, 24/09). Sem observação, sem o bloco.
+- **Nunca**: texto de anúncio do Mercado Livre ("para que serve", "perguntas
+  do anúncio", "SOBRE A TRATOR DIESEL"), tabela, código de equivalência,
+  travessão.
+
+### Metacampo `custom.modelos_compativeis`
+
+Tipo `list.single_line_text_field`. **Todos os valores de todas as linhas
+"Compatíveis"**, escritos igual à ficha e na mesma ordem: a camisa NS11 tem
+`["NS11","NS12","BM11","TC11","TC14"]`. Ele alimenta três coisas: o filtro
+"Modelo da máquina", as coleções "Peças para Yanmar NS11 e NS12" e afins
+(que casam o valor exato) e o "Serve em" do cartão. Nunca marca sozinha
+(`Lombardini`, `Ruggerini`). Gravou, toque e confira (regra 9).
+
+O Conjunto do Pistão Agrale 4100 teve só os tratores no metacampo de 22/09
+a 24/09. Desde 24/09 à noite tem as duas linhas da ficha, na ordem dela:
+`MD170, MD171, MD190, MD191, Agrale 4100, Agrale 4118, Agrale 4120`.
+
+### SEO
+
+- Título de SEO: vazio (vale o do produto).
+- Descrição: `<Título>, código <SKU da ficha>. Serve em <rótulo em
+  minúsculas> <modelos>. Envio para todo o Brasil.` Até três modelos, todos
+  (`LDW 1003 e LDW 1404`); mais que três, os dois primeiros e "e outros".
+  Mais de uma linha, separe com ponto e vírgula: `Serve em motores NS11, NS12
+  e BM11; microtratores TC11 e TC14.` Algumas antigas terminam em "Retirada
+  em Goiânia e envio para todo o Brasil."; as duas formas valem.
+- Mudou título ou compatibilidade, reescreva na mesma gravação.
+
+### Variante
+
+- **SKU**: o código interno do ERP Ensis (`30443`, `1833`).
+- **Preço**: o da planilha do cliente. Nunca zero.
+- **Estoque**: o total do ERP (skill `estoque-ensis-ecommerce`), rastreado,
+  sem vender sem estoque. Exceções na lista "Estoque zerado até segunda
+  ordem".
+- **Peso**: o real, em gramas. A Yampi calcula o frete com ele; zero ou 1 g é
+  erro.
+
+### Status, canais e endereço
+
+- **ACTIVE** sempre, mesmo com estoque zero (abaixo).
+- Publicado em **Loja virtual, Ponto de venda e Google & YouTube**.
+- **Endereço**: produto novo, tirado do título padronizado, minúsculas e sem
+  acento. Produto antigo mantém o que tem (muitos ainda carregam código ou
+  sobra de cadastro, como `-6501512` e `-pesar-foto`); trocar só com motivo,
+  e sempre com `redirectNewHandle: true`. Não há decisão do cliente sobre
+  isso ainda.
+- **Coleções**: nenhuma à mão. Marca entra pelo título, tipo pelo campo
+  Tipo, "Peças para..." pelo metacampo.
+
+### Depois de gravar
+
+1. Releia pela API: título, tipo, marca, etiquetas, descrição, metacampo,
+   SEO, estoque.
+2. Metacampo mudou: `tagsAdd` e `tagsRemove` de uma etiqueta temporária.
+3. Confira `/collections/<marca>/<tipo>` e
+   `/collections/<marca>?filter.p.m.custom.modelos_compativeis=<modelo>`
+   (4 links de recomendação em toda página: 4 quer dizer zero).
+4. Backup do que mudou num `backup-*.json` e registro em `registros.md`.
+
+### Armadilhas do cadastro
+
 
 - **Erro silencioso.** Sem etiqueta igual ao tipo, `/collections/marca/tipo`
   não dá prateleira vazia: devolve a coleção da marca inteira. Parece que
@@ -65,7 +237,6 @@ título da peça. Fica aqui só o que não é tabela de skill:
   de cada card. Coleção de uma página só mostra a esgotada na hora.
 - **`redirectNewHandle: true` no `productUpdate`** cria o redirecionamento
   sozinho. Não precisa de `urlRedirectCreate`.
-
 **Marca nova precisa de três coisas, e só dessas três:**
 
 1. Coleção automática por `TITLE CONTAINS <marca>`.
@@ -88,8 +259,9 @@ aparecem nas duas marcas. Peça TC nova precisa da etiqueta `agritech`.
 
 ## 3. Coleções e mega menu
 
-O catálogo tem **127 produtos**, todos com etiqueta igual ao campo "Tipo de
-produto", o que liga a URL nativa `/collections/marca/tipo` sem app nenhum.
+O catálogo tem **140 produtos** (contados em 24/09/2026), todos com etiqueta
+igual ao campo "Tipo de produto", o que liga a URL nativa
+`/collections/marca/tipo` sem app nenhum.
 
 13 coleções automáticas criadas e publicadas: Yanmar 75, Tobatta 14, Branco
 12, Agrale 10, Lavrale 6, Anéis 21, Juntas 17, Filtros 13, Bronzinas 11,
@@ -155,6 +327,205 @@ código em mais de um endereço, e a soma do ESTOQUE LOJA de todos os endereços
 13 no total e só 1 no endereço de loja. Pendentes no ERP: 4870 e 4280, duas
 unidades cada.
 
+### Padronização de 24/09
+
+Varredura dos 140 produtos contra o padrão das seções 1 e 2. Backup do que
+mudou em `backup-padronizacao-24-09.json`, tudo gravado sem `userErrors`.
+
+**Os 9 Lombardini criados à mão em 23/09** estavam sem tipo, sem etiqueta,
+sem metacampo e sem SEO, com título de anúncio (`Filtro De Óleo Lombardini
+LDW 903 1003 12LD 475 2175107`) e descrição do Mercado Livre ("perguntas do
+anúncio", bloco "SOBRE A TRATOR DIESEL"). Sem etiqueta igual ao tipo, as
+URLs `/collections/lombardini/<tipo>` davam a marca inteira (o erro
+silencioso da seção 2). Agora:
+
+|SKU|título|tipo|
+|-|-|-|
+|30450|Bucha do Pé de Biela Lombardini LDW 1003 Original|Bucha|
+|30390|Porta-Injetor Completo Lombardini 12LD 475-2 Original (marca Bosch)|Porta-Injetor|
+|30508|Filtro de Óleo Lombardini LDW 903 / LDW 1003 / 12LD 475-2 Original|Filtro|
+|34615|Bronzina de Mancal Lombardini LDW 1003 / LDW 1404 0,50 Original|Bronzina de Mancal|
+|30469|Correia Dentada da Distribuição Lombardini LDW 903 / LDW 1003 Original|Correia|
+|31205|Pistão Lombardini 9LD 625-2 / 9LD 626-2 / 11LD 625-3 / 11LD 626-3 STD Original|Pistão|
+|12001|Elemento do Filtro de Ar Lombardini LDW 702 / LDW 903 / LDW 1003 Original|Filtro|
+|30259|Elemento do Filtro de Ar Lombardini 15LD 225 Original|Filtro|
+|30443|Conjunto do Pistão Lombardini LDW 702 / LDW 1003 / LDW 1404 STD Original|Pistão|
+
+Títulos com `Original` desde a tarde de 24/09 (resposta do cliente, abaixo).
+
+Bucha, Correia e Porta-Injetor são tipos novos, sem coleção própria (como
+Bomba e Rotor). O mega menu os pega por `all_types`. Se o cliente quiser
+coleção ou chip para eles, é a regra das três listas de `tema-e-design.md`,
+num tema de trabalho novo.
+
+**Regras que valem para peça Lombardini daqui para frente:**
+
+- **Código Kohler (`ED00...-S`), código Agrale (`7065....`), código
+  substituto e código antigo vão só para etiqueta.** É equivalência de
+  fabricante. Na ficha, a linha `SKU:` leva o código Lombardini sem ponto
+  (`2175107`); a forma com ponto (`2175.107`) vai para etiqueta.
+- **Os nomes Kohler do mesmo motor (KDW 1003, KD625/2) vão só para
+  etiqueta**, pela mesma lógica de NS e NSB (regra 4b): é o mesmo motor com
+  outro nome.
+- **O `-2` e o `-3` de `12LD 475-2` e `9LD 625-2` ficam.** É o número de
+  cilindros e faz parte do nome do modelo. Não é extensão de aplicação.
+- **`LDW 1204/T` se escreve `LDW 1204T`** na ficha e no metacampo. A ficha
+  quebra pastilha na barra e sairia "LDW 1204" e "T".
+- O texto útil do anúncio (medida, quantas peças o motor usa, o que vem na
+  caixa) foi para `Conteúdo:` e `Observações:`. "Para que serve" e o bloco
+  institucional saíram.
+
+**SEO desatualizado em 31 produtos.** As rodadas de 21 e 22/09 mudaram
+título, ficha e metacampo e deixaram a descrição de SEO (o texto que o
+Google mostra) com o valor antigo. Ela ainda prometia NSB e sufixos R e RE
+em 21 peças da linha NS, `T12` no anel AR100, `BS180` no pistão AR140, `M90`
+no anel TR9, `M85` e `M80` no anel M90, `AS160` a `AS220` no anel AR160,
+`AR120` no anel TR10, `NB10` no anel B10 / NB13 e "motores Ruggerini" no
+pistão Agrale 4100. Mais dois acertos menores: o anel AR140 / AS140 não
+citava o AS140, e a bomba injetora BD 5.0 / BD 7.0 dizia "e outros" sem ter
+outros. Reescritas a partir do título e do metacampo de hoje, mantendo o fim
+de cada uma ("Retirada em Goiânia..." ou "Envio para todo o Brasil").
+
+**Regra que fica: mudou título ou compatibilidade, reescreva o SEO na mesma
+gravação.** Nenhuma rodada anterior fazia isso, e o erro não aparece na
+loja, só no Google.
+
+### Respostas do cliente, 24/09 (tarde)
+
+Gravado em 13 produtos, sem `userErrors`, lido de volta. Estado anterior em
+`backup-padronizacao-24-09.json`, chave `segunda_rodada`.
+
+- **Estoque do 30508 e do 11352 está certo** (14 e 3). Os dois saíram da
+  lista de zerados abaixo. Estoque não foi tocado.
+- **Conjunto do Pistão Agrale 4100 / 4118 / 4120 STD** (8082827444272)
+  **vem com anéis, pino e travas.** O texto de anúncio do ML ("vendido só o
+  pistão") saiu. A ficha voltou ao que estava em 22/09, no formato novo:
+  SKU `7072.004.007.00.3`, motores `MD170, MD171, MD190, MD191`, tratores
+  `Agrale 4100, Agrale 4118, Agrale 4120`, `Medida: STD, 85 mm`,
+  `Conteúdo: pistão, jogo de anéis, pino e travas` e a observação "O motor
+  usa 2 conjuntos, um por cilindro". Título, etiquetas, metacampo e SEO não
+  mudaram.
+- **"Todas as peças são originais"**: os oito Lombardini sem a palavra
+  ganharam `Original` no fim do título, e o SEO foi reescrito junto. O
+  porta-injetor continua com marca Bosch (a Bosch fabrica, a peça é a
+  original do motor).
+- **Modelos: "coloque apenas o que tiver certeza".**
+  - **Entrou `Sileo 1000` e `Sileo 1400`** no Conjunto do Pistão 6501512 e
+    na Correia 2440338, na ficha, no metacampo e em etiqueta (`sileo`,
+    `sileo 1000`, `sileo 1400`). O LDW SILEO 1000 / 1400 é família de motor
+    da própria Lombardini (i-service da Lombardini), e revendas diferentes
+    listam as duas peças para ele, junto com o jogo de anéis 8211248 do
+    mesmo pistão de 75 mm. Metacampo reindexado (regra 9).
+  - **`linha 9LD` e `LGW` continuam fora do filtro de óleo 2175107.** As
+    fontes brigam: uma revenda põe "LGW, 9LD, 12LD" no 2175107, e a mesma
+    revenda e outras dão para `9LD 561-2, 9LD 625-2, 9LD 626-2, LGW 627` o
+    filtro de 90 mm (2175131). Sem certeza, fica fora.
+  - **Dúvida que fica para o cliente**: essas mesmas listas põem o `12LD
+    475-2` no filtro de 90 mm. Ele está no título do 2175107 desde o
+    cadastro do cliente e não foi tirado.
+- **Observações em bloco próprio** (formato na seção 2) nos 9 Lombardini,
+  no pistão Agrale 4100 e em mais três que tinham o mesmo defeito: Filtro de
+  Óleo Agrale 4200 / MAN / Valmet, Jogo de Molas da Alavanca Branco B4T
+  13.0 / 15.0 e Carretel Retrátil Branco B4T 5.5 / 6.5 HP. Nos Lombardini,
+  a medida saiu de Observações para uma linha `Medida:` (pistões e bronzina).
+  Varredura por "Observa" no catálogo: nenhuma outra linha inline sobrou.
+
+### Respostas do cliente, 24/09 (noite)
+
+Gravado sem `userErrors` e lido de volta. Estado anterior em
+`backup-padronizacao-24-09.json`, chave `terceira_rodada`.
+
+- **Título: só os principais** (seção 2, "Título", e regra 2 revista). O
+  Sileo fica na ficha e no metacampo do pistão 6501512, e o título não
+  muda.
+- **Motores MD no filtro do pistão Agrale 4100** (8082827444272). O
+  metacampo passou a
+  `MD170, MD171, MD190, MD191, Agrale 4100, Agrale 4118, Agrale 4120`, e o
+  SEO passou a `Serve em motores MD170, MD171 e outros; tratores Agrale
+  4100, Agrale 4118 e Agrale 4120.` Os quatro MD vêm do catálogo oficial de
+  peças da Agrale para esses tratores e do manual de oficina Ruggerini da
+  série MD2 (ver "Motor não é marca", 21/09). Reindexado com etiqueta
+  temporária.
+- **"O motor usa 2 conjuntos" num produto de quatro motores.** O cliente
+  achou estranho, e perguntou se valia para todos. Varredura das 21 peças
+  com Observações: cinco falavam de quantidade. Reescritas no formato da
+  seção 2:
+  - pistão Agrale 4100: `Vai 1 conjunto por cilindro. Os quatro motores MD
+    têm 2 cilindros e levam 2 conjuntos.`
+  - porta-injetor 6615045: `Vai 1 por cilindro: o 12LD 475-2 tem 2
+    cilindros e leva 2.`
+  - pistão 6500272: `Vai 1 por cilindro: os 9LD levam 2 e os 11LD levam 3.`
+  - pistão 6501512: `Vai 1 por cilindro: o LDW 702 leva 2, o LDW 1003 leva
+    3 e o LDW 1404 leva 4.`
+  - bucha 1630038: `Vai 1 por biela: o LDW 1003 leva 3.`
+  O número de cilindros sai do próprio nome Lombardini (o último algarismo
+  do LDW, o `-2` e o `-3` da linha LD). A bronzina 1611195 ficou como
+  estava ("O LDW 1003 usa 4 peças"), porque falta a conta do LDW 1404.
+- **Pontuação**: ponto final nas observações do Disco de Soja 8 mm e da
+  Caixa do Ventilador NS75, e um `<br>` solto a menos na ficha da caixa.
+- **A linha Observação da ficha** saía com fio dourado e letra fina, fora
+  do desenho das outras linhas. Mudou no tema de trabalho `166112100400`
+  (ver `tema-e-design.md`, "A linha Observação").
+- **12LD 475-2 no filtro 2175107 e Sileo**: continuam como estavam, à
+  espera do catálogo oficial. Ver a lista de pendências em
+  `comece-por-aqui.md`, item 15.
+- **"Peças para o mesmo motor" misturava motores** pelo nome do trator
+  (pistão MD com peças do M90). A faixa passou a casar só pela linha
+  `Motores Compatíveis:` (tema de trabalho; `tema-e-design.md`). A coleção
+  `pecas-agrale-m790-m93` perdeu as regras "Agrale 4200" e "Agrale 4300",
+  que puxavam o filtro do motor MAN. **Regra que fica: coleção "Peças para
+  <motor>" só tem regra de motor, nunca de trator**, porque um mesmo
+  trator sai de fábrica com motores diferentes.
+
+### Conferência no catálogo oficial Lombardini, 24/09 (fim da noite)
+
+O cliente liberou parte da rede, e o i-service da Lombardini abriu. Foram
+baixados os 313 desenhos de peças dos grupos FOCS / SuperFOCS, FOCS Turbo,
+LGW 523 / 627, 12LD, 12LD 477-2, 9LD, 11LD, 15LD, Piaggio e SILEO, e cada
+código dos 9 produtos foi procurado neles. **Nenhum modelo das fichas está
+errado.** Nada foi gravado.
+
+| Código | Desenho oficial | Motores (quantidade por motor) |
+|---|---|---|
+| 2175.107 filtro de óleo (mm 59) | H (FOCS), D (12LD, 9LD, LGW) | LDW 502, 602, 702, 903, 1003 (1); 12LD 435-2 e **12LD 475-2** (1, pos. 58a, alternativa ao 2175.131 de 90 mm); LGW 523, 627; 9LD 561-2, 625-2, 626-2; SILEO 1000 |
+| 2440.338 correia z=113 | D | LDW 602, 702, 903, 1003, 1204, 1204/T, 1404, LGW 627, **SILEO 1000 e 1400** (1). O LDW 502 não usa |
+| 6501.512 PISTON SET std | B | LDW 702 (2), 1003 (3), 1404 (4), **SILEO 1000 (3) e 1400 (4)** |
+| 1611.195 mancal -0,50 | E | LDW 602 (3), 702 (3), 903 (4), 1003 (4), **1404 (5)**, 1204 e 1204/T (5), LGW 627 (3), SILEO 1000 (4) e 1400 (5) |
+| 1630.038 bucha do pé de biela | B | LDW 702 (2), 1003 (3), 1404 e 1204/T (4), SILEO 1000 (3) e 1400 (4) |
+| 6615.045 porta-injetor Bosch | E | 12LD 435-2 e 12LD 475-2 (2). Na versão EPA é o 6615.098 |
+| 6500.272 PISTON SET std | B | 9LD 625-2 e 626-2 (2), 11LD 625-3 e 626-3 (3). Anéis std: 8211.209 |
+| 2175.164 elemento do filtro de ar | A | LDW 502, 602, 702, 903, 1003 (1) |
+| 2175.180 elemento do filtro de ar | A | 15LD 225 (1) |
+
+Do manual de oficina LDW FOCS: pino de 20 mm (19,996 a 20,000) no LDW 702,
+1003, 1204/T e 1404, e cartucho de óleo com rosca M 20x1,5. Do manual 12LD:
+filtro de óleo interno até o motor nº 4877736 e externo a partir dele.
+
+**Como achar um desenho** (o site é todo servido sem login):
+
+- índice dos grupos: `iservice.lombardini.it/en/engines/data/1802/CD-spare-parts-catalogue`
+  (`/en/manuals/<grupo>/-1/<nome>`, por exemplo 1831 FOCS-SuperFOCS, 1823
+  12LD, 1833 SILEO);
+- cada capítulo é `/en/manuals/<grupo>/<capítulo>`, e a página traz o link
+  `/documents/Manuals/<n>/<nome>.pdf`;
+- **armadilha**: no 12LD, o capítulo "2.4 D - Controls_Lubricating System"
+  do 12LD 475-2 aponta para o PDF do 6LD 401/B1. O desenho certo do 12LD
+  475-2 é `/documents/Manuals/9208/d_-_controls-lubricating_system.pdf`.
+  Foi esse erro de link que fez a busca de antes concluir que o 12LD usava
+  só o de 90 mm.
+
+**O que o desenho não responde**:
+
+- **O que vem dentro do PISTON SET.** O 6501.512 e o 6500.272 têm o mesmo
+  nome no catálogo, e os dois desenhos listam anéis, pino e travas como
+  itens separados. A ficha do 6501512 diz "pistão, pino, travas e jogo de
+  anéis" e a do 6500272 diz "só o pistão". As duas vêm do texto do próprio
+  cliente. Só a caixa em estoque responde.
+- **Bico no porta-injetor.** O desenho lista o bico 6531.104 como item
+  separado. A ficha diz "com o bico injetor já montado" (texto do cliente).
+- **ACME AD230 no filtro 2175180.** Não está no catálogo Lombardini, e
+  `acmemotori.com` não é mais o site do fabricante.
+
 ### Estoque zerado até segunda ordem (decisão do cliente, 16/09/2026)
 
 Zerado no site e **mantido em zero** até o cliente mandar voltar, mesmo que
@@ -172,6 +543,10 @@ o ERP mostre saldo. Backup das quantidades em
   Lombardini (6 de 6), 2370 cobertura do radiador NS18 (3 de 3) e 38782
   bronzina 3TNV70 (3 de 3). Os outros 15 SKUs do site que aparecem na Amotor
   têm loja menor que total e não mudaram.
+- **Saíram da lista em 24/09**: 11352 (Conjunto do Pistão Agrale 4100) e
+  30508 (filtro de óleo Lombardini). O cliente disse que o estoque de hoje
+  (3 e 14) está certo e que não é para zerar. Não zere de novo sem o
+  cliente pedir, mesmo que voltem a casar na Amotor.
 - **Atenção na próxima atualização de estoque pelo ERP**: pule estes SKUs, e
   refaça o cruzamento com a Amotor, porque a regra vale para item novo que
   cair nela. Isto é exceção à regra geral de "estoque é o total do ERP".
@@ -197,8 +572,8 @@ Câmbios), cabo 1669 (`TC14s`) e cobertura 2370, que não tinha linha nenhuma.
 Divergências de título e compatibilidade: **resolvidas em 16/09** com o
 cliente (10127, 595, 727, 5431, 68099, carretel). Na mesma rodada, o padrão de
 rótulos ficou fechado: Microtratores só para os TC, Tratores para trator de
-verdade, e `Compatibilidade:` saiu do catálogo. Regra completa na skill
-`padronizar-produto-atd`; registro em `comece-por-aqui.md`, 16/09 (tarde).
+verdade, e `Compatibilidade:` saiu do catálogo. Regra completa na seção 2,
+"Descrição"; registro em `comece-por-aqui.md`, 16/09 (tarde).
 
 Peso zerado ou impossível na Shopify (a Yampi calcula frete com ele):
 74794 virabrequim 4TNV88 XAT (0 g), 52791 virabrequim 4TNV88 (15 g), 6352
@@ -294,6 +669,13 @@ cadastro de peça nova e em qualquer revisão. Quando uma linha não passa por
 estas regras, ela **sai**: o cliente foi explícito, "não podemos induzir o
 cliente ao erro", e peça a menos se resolve no telefone, peça errada não.
 
+**Fonte (cliente, 24/09/2026): só catálogo oficial e original confirma um
+modelo.** Vale o do fabricante: i-service da Lombardini
+(`iservice.lombardini.it`), catálogo de peças e ficha técnica da Agrale,
+manual de oficina da fábrica. Revenda, marketplace e loja de peças servem
+de pista, nunca de prova. Se o catálogo oficial não abre, o modelo novo não
+entra, e o que já estava fica anotado como pendência.
+
 **1. Diâmetro manda em pistão, anel e camisa.** Essas três só podem listar
 motores do **mesmo diâmetro de cilindro**. Bronzina de biela e de mancal
 podem cruzar diâmetros, porque dependem do virabrequim. Junta, filtro,
@@ -306,9 +688,13 @@ Diâmetros Agrale confirmados no folheto da linha M (Agrale, setembro de
 90 x 100 mm, 2 cilindros, 1.272 cm³. Um jogo de anéis não serve em M90,
 M85 e M80 ao mesmo tempo.
 
-**2. Modelo que não está no título não entra na lista**, a menos que a peça
-seja independente do diâmetro. Foi assim que saíram BS95 do jogo TR10 e
-BS180 do pistão AR140.
+**2. O título não limita a lista** (revista pelo cliente em 24/09/2026).
+Até então a regra dizia que modelo fora do título não entrava na lista de
+pistão, anel e camisa. O cliente corrigiu: o título leva só os principais,
+e a ficha e o metacampo levam todos. Quem decide se um modelo entra é a
+fonte oficial e a regra 1, não o título. BS95 (jogo TR10) e BS180 (pistão
+AR140), que saíram pela regra antiga, continuam fora até um catálogo
+oficial dizer que servem.
 
 **3. Marca não é modelo.** Ruggerini, Lombardini, Scania e Komatsu são
 fabricantes. Vão para **etiqueta**, que é onde a equivalência mora nesta
@@ -345,7 +731,7 @@ confere pela rosca e pela vedação é devolução na certa.
 **6. Sem parêntese explicativo dentro do valor.** `3D76 (Komatsu)` vira
 `3D76`, `3YM30 (marítimo)` vira `3YM30`, `BD 13.0 (linhas G2 e XS)` vira
 `BD 13.0`. A ficha quebra o valor em pastilha e o parêntese entra junto.
-Explicação, se precisar, vai na linha `Observações:`.
+Explicação, se precisar, vai no bloco `Observações:` (formato na seção 2).
 
 **7. Peças do mesmo conjunto dizem a mesma coisa.** Pistão, anel e camisa
 do mesmo motor têm que ter listas idênticas. Divergência entre elas é erro
