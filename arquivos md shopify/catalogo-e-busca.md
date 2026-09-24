@@ -65,6 +65,26 @@ título da peça. Fica aqui só o que não é tabela de skill:
   de cada card. Coleção de uma página só mostra a esgotada na hora.
 - **`redirectNewHandle: true` no `productUpdate`** cria o redirecionamento
   sozinho. Não precisa de `urlRedirectCreate`.
+- **Formato da descrição** (cliente, 24/09: "a parte de observação está sem
+  formatação"). Dois blocos, cada um com título em negrito e lista:
+
+  ```html
+  <p><strong>Especificações:</strong></p>
+  <ul>
+  <li>SKU: ...</li>
+  <li>Motores Compatíveis: ...</li>
+  <li>Medida: ...</li>
+  <li>Conteúdo: ...</li>
+  </ul>
+  <p><strong>Observações:</strong></p>
+  <ul>
+  <li>Uma frase por item.</li>
+  </ul>
+  ```
+
+  `Medida:` e `Conteúdo:` só quando a peça tiver. **Observações nunca é
+  linha dentro de Especificações** (`<li>Observações: ...</li>`): sai sem
+  negrito e colada na ficha. Peça sem observação não leva o segundo bloco.
 
 **Marca nova precisa de três coisas, e só dessas três:**
 
@@ -171,14 +191,16 @@ silencioso da seção 2). Agora:
 |SKU|título|tipo|
 |-|-|-|
 |30450|Bucha do Pé de Biela Lombardini LDW 1003 Original|Bucha|
-|30390|Porta-Injetor Completo Lombardini 12LD 475-2 (marca Bosch)|Porta-Injetor|
-|30508|Filtro de Óleo Lombardini LDW 903 / LDW 1003 / 12LD 475-2|Filtro|
-|34615|Bronzina de Mancal Lombardini LDW 1003 / LDW 1404 0,50|Bronzina de Mancal|
-|30469|Correia Dentada da Distribuição Lombardini LDW 903 / LDW 1003|Correia|
-|31205|Pistão Lombardini 9LD 625-2 / 9LD 626-2 / 11LD 625-3 / 11LD 626-3 STD|Pistão|
-|12001|Elemento do Filtro de Ar Lombardini LDW 702 / LDW 903 / LDW 1003|Filtro|
-|30259|Elemento do Filtro de Ar Lombardini 15LD 225|Filtro|
-|30443|Conjunto do Pistão Lombardini LDW 702 / LDW 1003 / LDW 1404 STD|Pistão|
+|30390|Porta-Injetor Completo Lombardini 12LD 475-2 Original (marca Bosch)|Porta-Injetor|
+|30508|Filtro de Óleo Lombardini LDW 903 / LDW 1003 / 12LD 475-2 Original|Filtro|
+|34615|Bronzina de Mancal Lombardini LDW 1003 / LDW 1404 0,50 Original|Bronzina de Mancal|
+|30469|Correia Dentada da Distribuição Lombardini LDW 903 / LDW 1003 Original|Correia|
+|31205|Pistão Lombardini 9LD 625-2 / 9LD 626-2 / 11LD 625-3 / 11LD 626-3 STD Original|Pistão|
+|12001|Elemento do Filtro de Ar Lombardini LDW 702 / LDW 903 / LDW 1003 Original|Filtro|
+|30259|Elemento do Filtro de Ar Lombardini 15LD 225 Original|Filtro|
+|30443|Conjunto do Pistão Lombardini LDW 702 / LDW 1003 / LDW 1404 STD Original|Pistão|
+
+Títulos com `Original` desde a tarde de 24/09 (resposta do cliente, abaixo).
 
 Bucha, Correia e Porta-Injetor são tipos novos, sem coleção própria (como
 Bomba e Rotor). O mega menu os pega por `all_types`. Se o cliente quiser
@@ -217,6 +239,46 @@ de cada uma ("Retirada em Goiânia..." ou "Envio para todo o Brasil").
 gravação.** Nenhuma rodada anterior fazia isso, e o erro não aparece na
 loja, só no Google.
 
+### Respostas do cliente, 24/09 (tarde)
+
+Gravado em 13 produtos, sem `userErrors`, lido de volta. Estado anterior em
+`backup-padronizacao-24-09.json`, chave `segunda_rodada`.
+
+- **Estoque do 30508 e do 11352 está certo** (14 e 3). Os dois saíram da
+  lista de zerados abaixo. Estoque não foi tocado.
+- **Conjunto do Pistão Agrale 4100 / 4118 / 4120 STD** (8082827444272)
+  **vem com anéis, pino e travas.** O texto de anúncio do ML ("vendido só o
+  pistão") saiu. A ficha voltou ao que estava em 22/09, no formato novo:
+  SKU `7072.004.007.00.3`, motores `MD170, MD171, MD190, MD191`, tratores
+  `Agrale 4100, Agrale 4118, Agrale 4120`, `Medida: STD, 85 mm`,
+  `Conteúdo: pistão, jogo de anéis, pino e travas` e a observação "O motor
+  usa 2 conjuntos, um por cilindro". Título, etiquetas, metacampo e SEO não
+  mudaram.
+- **"Todas as peças são originais"**: os oito Lombardini sem a palavra
+  ganharam `Original` no fim do título, e o SEO foi reescrito junto. O
+  porta-injetor continua com marca Bosch (a Bosch fabrica, a peça é a
+  original do motor).
+- **Modelos: "coloque apenas o que tiver certeza".**
+  - **Entrou `Sileo 1000` e `Sileo 1400`** no Conjunto do Pistão 6501512 e
+    na Correia 2440338, na ficha, no metacampo e em etiqueta (`sileo`,
+    `sileo 1000`, `sileo 1400`). O LDW SILEO 1000 / 1400 é família de motor
+    da própria Lombardini (i-service da Lombardini), e revendas diferentes
+    listam as duas peças para ele, junto com o jogo de anéis 8211248 do
+    mesmo pistão de 75 mm. Metacampo reindexado (regra 9).
+  - **`linha 9LD` e `LGW` continuam fora do filtro de óleo 2175107.** As
+    fontes brigam: uma revenda põe "LGW, 9LD, 12LD" no 2175107, e a mesma
+    revenda e outras dão para `9LD 561-2, 9LD 625-2, 9LD 626-2, LGW 627` o
+    filtro de 90 mm (2175131). Sem certeza, fica fora.
+  - **Dúvida que fica para o cliente**: essas mesmas listas põem o `12LD
+    475-2` no filtro de 90 mm. Ele está no título do 2175107 desde o
+    cadastro do cliente e não foi tirado.
+- **Observações em bloco próprio** (formato na seção 2) nos 9 Lombardini,
+  no pistão Agrale 4100 e em mais três que tinham o mesmo defeito: Filtro de
+  Óleo Agrale 4200 / MAN / Valmet, Jogo de Molas da Alavanca Branco B4T
+  13.0 / 15.0 e Carretel Retrátil Branco B4T 5.5 / 6.5 HP. Nos Lombardini,
+  a medida saiu de Observações para uma linha `Medida:` (pistões e bronzina).
+  Varredura por "Observa" no catálogo: nenhuma outra linha inline sobrou.
+
 ### Estoque zerado até segunda ordem (decisão do cliente, 16/09/2026)
 
 Zerado no site e **mantido em zero** até o cliente mandar voltar, mesmo que
@@ -234,6 +296,10 @@ o ERP mostre saldo. Backup das quantidades em
   Lombardini (6 de 6), 2370 cobertura do radiador NS18 (3 de 3) e 38782
   bronzina 3TNV70 (3 de 3). Os outros 15 SKUs do site que aparecem na Amotor
   têm loja menor que total e não mudaram.
+- **Saíram da lista em 24/09**: 11352 (Conjunto do Pistão Agrale 4100) e
+  30508 (filtro de óleo Lombardini). O cliente disse que o estoque de hoje
+  (3 e 14) está certo e que não é para zerar. Não zere de novo sem o
+  cliente pedir, mesmo que voltem a casar na Amotor.
 - **Atenção na próxima atualização de estoque pelo ERP**: pule estes SKUs, e
   refaça o cruzamento com a Amotor, porque a regra vale para item novo que
   cair nela. Isto é exceção à regra geral de "estoque é o total do ERP".
@@ -407,7 +473,7 @@ confere pela rosca e pela vedação é devolução na certa.
 **6. Sem parêntese explicativo dentro do valor.** `3D76 (Komatsu)` vira
 `3D76`, `3YM30 (marítimo)` vira `3YM30`, `BD 13.0 (linhas G2 e XS)` vira
 `BD 13.0`. A ficha quebra o valor em pastilha e o parêntese entra junto.
-Explicação, se precisar, vai na linha `Observações:`.
+Explicação, se precisar, vai no bloco `Observações:` (formato na seção 2).
 
 **7. Peças do mesmo conjunto dizem a mesma coisa.** Pistão, anel e camisa
 do mesmo motor têm que ter listas idênticas. Divergência entre elas é erro

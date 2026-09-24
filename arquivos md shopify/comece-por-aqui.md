@@ -277,7 +277,9 @@ por alguns minutos depois do redirecionamento criado. Confira com
 - **Preço das peças fora da planilha**: B-205 0,50, B-204 1,00 e B-208 1,00
   (variantes de bronzina), NS18C.44821, TC14.62100, 10H1, 5431 e NS18.01336 P.
   Resolvidos em 17/09: 112776 fica em R$ 110 (já na planilha); 48385
-  (129630.55731), 30508 e 3486 estão zerados e **continuam zerados**, sem aviso.
+  (129630.55731) e 3486 estão zerados e **continuam zerados**, sem aviso. O
+  30508 saiu dessa lista em 24/09: o cliente disse que o estoque dele está
+  certo.
 - **Filtro "Modelo da máquina" nas coleções**: o dado está pronto
   (metafield `custom.modelos_compativeis` nas 109 peças com compatibilidade).
   Falta o cliente ligar no app Search & Discovery (o admin pede login no
@@ -395,31 +397,31 @@ for ligado ou se o telefone da ficha seguir errado.
   `pix_pct` 0 esconde a linha do Pix. Nota abaixo de 4,5 mostra só o número
   de avaliações.
 
-### 14. Catálogo: quatro respostas do cliente (achado em 24/09)
+### 14. Catálogo: as quatro respostas do cliente (24/09), fechado
 
-Nada disso foi mexido; cada item espera uma decisão. Registro de 24/09.
+O cliente respondeu no mesmo dia e está gravado. Detalhe em
+`catalogo-e-busca.md`, "Respostas do cliente, 24/09".
 
-- **Estoque contra a lista de zerados.** A seção "Estoque zerado até
-  segunda ordem" de `catalogo-e-busca.md` manda manter em zero o 30508
-  (filtro de óleo Lombardini) e o 11352 (Conjunto do Pistão Agrale 4100).
-  Hoje o 30508 está com **14** (produto novo, criado à mão em 23/09) e o
-  11352 com **3**. Se foi o cliente que mandou voltar, apague os dois da
-  lista; se não, zere.
-- **Descrição do `Conjunto do Pistão Agrale 4100 / 4118 / 4120 STD`**
-  (8082827444272) foi trocada por um texto de anúncio do Mercado Livre
-  depois de 22/09 (última alteração do produto: 24/09, 03:55 de Brasília,
-  pelo admin). O texto novo diz "Vendido só o pistão, sem anéis, pino e
-  travas", e o título diz **Conjunto** e as etiquetas dizem `kit pistao` e
-  `anel de segmento`. Também só cita o 4120, e o metacampo tem 4100, 4118 e
-  4120. Um dos dois está errado; o cliente diz qual.
-- **O que ficou fora dos 9 Lombardini** pelas regras de compatibilidade:
-  "linha 9LD" e "LGW" no filtro de óleo 2175107 (regra 5, promessa larga em
-  peça que se confere pela rosca) e "Sileo 1000" e "Sileo 1400" no pistão
-  6501512 e na correia 2440338 (não foi possível confirmar o que são). Voltam
-  com o modelo exato.
-- **`Original` só entrou onde o cliente escreveu** (a bucha 1630038). Os
-  outros oito estão com marca Lombardini (Bosch no porta-injetor) e sem
-  `Original` no título. Se forem peças originais, o título ganha a palavra.
+- ~~Estoque do 30508 e do 11352 contra a lista de zerados~~: **o estoque de
+  hoje está certo** (14 e 3). Os dois saíram da lista de zerados.
+- ~~Descrição do Conjunto do Pistão Agrale 4100~~: **vem com anéis, pino e
+  travas**. O texto do ML saiu e a ficha voltou ao padrão.
+- ~~Modelos fora dos Lombardini~~: o cliente mandou pôr só o que for
+  certo. Entrou `Sileo 1000` e `Sileo 1400` no pistão 6501512 e na correia
+  2440338. `linha 9LD` e `LGW` continuam fora do filtro de óleo 2175107.
+- ~~`Original`~~: **todas as peças Lombardini são originais**; os oito
+  títulos que faltavam ganharam a palavra.
+
+**O que sobrou, sem decisão pendente mas para conferir:**
+
+- **O `12LD 475-2` do filtro de óleo 2175107.** Está no título desde o
+  cadastro do cliente e continua lá. Mas os catálogos de revenda dão para o
+  12LD 475-2 o filtro de 90 mm (2175131), e o 2175107 tem cerca de 78 mm.
+  Vale o cliente conferir na plaqueta de um motor antes da próxima venda.
+- **Faceta**, na próxima sessão com navegador:
+  `/collections/lombardini?filter.p.m.custom.modelos_compativeis=LDW%201003`
+  deve devolver 6 peças e `...=Sileo%201000` deve devolver 2 (pistão e
+  correia), cada uma mais os 4 links de recomendação.
 
 \---
 

@@ -9,6 +9,38 @@ ficou assim".
 
 Do mais novo para o mais velho, na ordem em que estavam.
 
+## Registro de 24/09/2026 (tarde): respostas do cliente sobre o catálogo
+
+Resposta do cliente aos quatro achados do item 14 de `comece-por-aqui.md`,
+gravada no mesmo dia em 13 produtos, sem `userErrors`, lida de volta.
+Backup em `backup-padronizacao-24-09.json`, chave `segunda_rodada`.
+
+1. **Estoque do 30508 (14) e do 11352 (3) está certo.** Saíram da lista de
+   zerados; estoque não foi tocado.
+2. **Conjunto do Pistão Agrale 4100 vem com anéis, pino e travas.** O texto
+   do ML saiu e a ficha voltou ao padrão (motores MD, tratores Agrale 4100 /
+   4118 / 4120, medida, conteúdo).
+3. **Modelos, só o que for certo.** `Sileo 1000` e `Sileo 1400` entraram no
+   pistão 6501512 e na correia 2440338 (família de motor da Lombardini,
+   confirmada em revendas diferentes). `linha 9LD` e `LGW` seguem fora do
+   filtro 2175107, porque as fontes dão a esses motores o filtro de 90 mm
+   (2175131). As mesmas fontes põem o `12LD 475-2` no de 90 mm: ficou no
+   título, anotado como dúvida em `comece-por-aqui.md`, item 14.
+4. **Todas as peças Lombardini são originais.** `Original` no fim do título
+   dos oito que faltavam, SEO reescrito junto.
+5. **"A parte de observação está sem formatação."** Os nove Lombardini e
+   mais três produtos (filtro de óleo Agrale 4200, jogo de molas B4T 13.0 /
+   15.0 e carretel B4T) tinham `<li>Observações: ...</li>` dentro de
+   Especificações. Viraram o bloco `<p><strong>Observações:</strong></p>`
+   com lista, que é o formato das outras peças da loja. Regra escrita em
+   `catalogo-e-busca.md`, seção 2.
+
+A pesquisa na internet foi só por busca: a rede da sessão recusa os sites
+das revendas e o i-service da Lombardini (proxy), então as páginas não
+foram abertas, só os trechos que a busca devolve.
+
+---
+
 ## Registro de 24/09/2026: os 9 Lombardini padronizados, SEO desatualizado e tema publicado
 
 Sessão na nuvem, pelo repositório do GitHub. Pedido: conferir se os `.md`
