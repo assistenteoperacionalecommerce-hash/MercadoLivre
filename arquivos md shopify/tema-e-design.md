@@ -1009,7 +1009,9 @@ em 8 (cabos, capa, decalques, lona, juntas da caixa, faca TA73), e 14
 páginas ficam sem a seção porque nenhuma outra peça tem o mesmo motor. O
 pistão MD é uma delas, porque a loja não tem outra peça de motor MD. Arquivo
 gravado igual ao testado (md5 `bf3ec65f...`, 14.940 bytes; no ar é
-`8914fd72...`). **Falta medir no preview.**
+`8914fd72...`). **Conferido no preview em 24/09** (fim da noite), lendo o
+HTML das 118 páginas servidas pelo tema `166112100400`: 523 cartões, nenhum
+sem motor em comum com a página, e os mesmos 96 / 8 / 14.
 
 A coleção `pecas-agrale-m790-m93` tinha a mesma falha, nas regras "Agrale
 4200" e "Agrale 4300", e mostrava o filtro do motor MAN. As duas regras
@@ -1043,9 +1045,12 @@ virabrequim 4TNV88 com `<br>` solto) e medido no Chromium com Inter
 400/500/700/800. Todas as outras linhas saíram iguais ao antes, byte a byte.
 Observação: 15px, peso 500, sem borda, começando no mesmo x das pastilhas
 (116 no quadro de teste, igual às outras seis linhas). O arquivo gravado
-bate com o testado (md5 `d803a77f...`). **Falta medir no preview**: com a
-rede liberada, `?preview_theme_id=166112100400` no pistão Agrale 4100 e no
-filtro 2175107, a 390, 990 e 1440.
+bate com o testado (md5 `d803a77f...`). No preview (24/09, fim da noite)
+o HTML confere: as 29 frases de Observação das 19 fichas saem uma por
+`atd-ficha__obs-item`, dentro da linha "Observação", entre as outras linhas
+da ficha. **Falta a medida em pixel** a 390, 990 e 1440: o Chromium desta
+máquina não confia no certificado do proxy, e abrir ignorando o
+certificado não se faz.
 
 ### O localizador virou lista própria (23/09/2026)
 

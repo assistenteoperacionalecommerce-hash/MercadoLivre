@@ -477,6 +477,55 @@ Gravado sem `userErrors` e lido de volta. Estado anterior em
   <motor>" só tem regra de motor, nunca de trator**, porque um mesmo
   trator sai de fábrica com motores diferentes.
 
+### Conferência no catálogo oficial Lombardini, 24/09 (fim da noite)
+
+O cliente liberou parte da rede, e o i-service da Lombardini abriu. Foram
+baixados os 313 desenhos de peças dos grupos FOCS / SuperFOCS, FOCS Turbo,
+LGW 523 / 627, 12LD, 12LD 477-2, 9LD, 11LD, 15LD, Piaggio e SILEO, e cada
+código dos 9 produtos foi procurado neles. **Nenhum modelo das fichas está
+errado.** Nada foi gravado.
+
+| Código | Desenho oficial | Motores (quantidade por motor) |
+|---|---|---|
+| 2175.107 filtro de óleo (mm 59) | H (FOCS), D (12LD, 9LD, LGW) | LDW 502, 602, 702, 903, 1003 (1); 12LD 435-2 e **12LD 475-2** (1, pos. 58a, alternativa ao 2175.131 de 90 mm); LGW 523, 627; 9LD 561-2, 625-2, 626-2; SILEO 1000 |
+| 2440.338 correia z=113 | D | LDW 602, 702, 903, 1003, 1204, 1204/T, 1404, LGW 627, **SILEO 1000 e 1400** (1). O LDW 502 não usa |
+| 6501.512 PISTON SET std | B | LDW 702 (2), 1003 (3), 1404 (4), **SILEO 1000 (3) e 1400 (4)** |
+| 1611.195 mancal -0,50 | E | LDW 602 (3), 702 (3), 903 (4), 1003 (4), **1404 (5)**, 1204 e 1204/T (5), LGW 627 (3), SILEO 1000 (4) e 1400 (5) |
+| 1630.038 bucha do pé de biela | B | LDW 702 (2), 1003 (3), 1404 e 1204/T (4), SILEO 1000 (3) e 1400 (4) |
+| 6615.045 porta-injetor Bosch | E | 12LD 435-2 e 12LD 475-2 (2). Na versão EPA é o 6615.098 |
+| 6500.272 PISTON SET std | B | 9LD 625-2 e 626-2 (2), 11LD 625-3 e 626-3 (3). Anéis std: 8211.209 |
+| 2175.164 elemento do filtro de ar | A | LDW 502, 602, 702, 903, 1003 (1) |
+| 2175.180 elemento do filtro de ar | A | 15LD 225 (1) |
+
+Do manual de oficina LDW FOCS: pino de 20 mm (19,996 a 20,000) no LDW 702,
+1003, 1204/T e 1404, e cartucho de óleo com rosca M 20x1,5. Do manual 12LD:
+filtro de óleo interno até o motor nº 4877736 e externo a partir dele.
+
+**Como achar um desenho** (o site é todo servido sem login):
+
+- índice dos grupos: `iservice.lombardini.it/en/engines/data/1802/CD-spare-parts-catalogue`
+  (`/en/manuals/<grupo>/-1/<nome>`, por exemplo 1831 FOCS-SuperFOCS, 1823
+  12LD, 1833 SILEO);
+- cada capítulo é `/en/manuals/<grupo>/<capítulo>`, e a página traz o link
+  `/documents/Manuals/<n>/<nome>.pdf`;
+- **armadilha**: no 12LD, o capítulo "2.4 D - Controls_Lubricating System"
+  do 12LD 475-2 aponta para o PDF do 6LD 401/B1. O desenho certo do 12LD
+  475-2 é `/documents/Manuals/9208/d_-_controls-lubricating_system.pdf`.
+  Foi esse erro de link que fez a busca de antes concluir que o 12LD usava
+  só o de 90 mm.
+
+**O que o desenho não responde**:
+
+- **O que vem dentro do PISTON SET.** O 6501.512 e o 6500.272 têm o mesmo
+  nome no catálogo, e os dois desenhos listam anéis, pino e travas como
+  itens separados. A ficha do 6501512 diz "pistão, pino, travas e jogo de
+  anéis" e a do 6500272 diz "só o pistão". As duas vêm do texto do próprio
+  cliente. Só a caixa em estoque responde.
+- **Bico no porta-injetor.** O desenho lista o bico 6531.104 como item
+  separado. A ficha diz "com o bico injetor já montado" (texto do cliente).
+- **ACME AD230 no filtro 2175180.** Não está no catálogo Lombardini, e
+  `acmemotori.com` não é mais o site do fabricante.
+
 ### Estoque zerado até segunda ordem (decisão do cliente, 16/09/2026)
 
 Zerado no site e **mantido em zero** até o cliente mandar voltar, mesmo que

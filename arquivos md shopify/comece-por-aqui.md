@@ -448,26 +448,30 @@ Backup em `backup-padronizacao-24-09.json`, chave `terceira_rodada`.
 
 **O que sobrou para conferir:**
 
-- **Liberar a rede da sessão.** O ambiente da nuvem bloqueia
-  `iservice.lombardini.it`, `agrale.com.br`, `pdf.agrale.com.br` e
-  `loja.atratordiesel.com.br` (403 no proxy, WebFetch também). Sem eles não
-  dá para abrir o catálogo oficial nem medir o preview. O cliente libera
-  em: menu do ambiente no título da sessão, Editar, Acesso à rede. Contornar
-  o bloqueio por outro caminho não se faz (o cliente pediu, e foi
-  recusado). O outro caminho legítimo: o cliente baixa os PDFs no
-  computador dele e sobe no repositório, numa pasta `catalogos/`, e a sessão
-  lê de lá.
-- **"Agrale 4100" no Conjunto do Pistão MD (8082827444272). Provável
-  erro.** A ficha técnica oficial do Trator 4100 (só o resumo da busca)
-  dá motor Agrale M93 ID, de 1 cilindro; os MD são de 2. As outras peças do
-  4100 na loja são todas de motor de 1 cilindro (M80, M85, M90). O 4100
-  está no título desde o cadastro do cliente, e o casamento de cada MD com
-  cada trator já era inferência em 21/09. Confirmar no catálogo de peças da
-  Agrale antes da próxima venda; se confirmar, o 4100 sai do título, da
-  ficha, do metacampo e do SEO.
-- **Juntas M93 com "Tratores: Agrale 4200, Agrale 4300"**, enquanto a
-  ficha oficial do 4100 diz motor M93 ID. Conferir em quais tratores o M93
-  vai.
+- **Rede da sessão (24/09, fim da noite).** O cliente liberou uma lista de
+  domínios, não a rede toda. Abrem: `iservice.lombardini.it`,
+  `www.agrale.com.br` e `loja.atratordiesel.com.br`. Não abrem:
+  `pdf.agrale.com.br` e `www.lombardini.it` (conexão cortada),
+  `blog.agrdistribuidora.com.br` (fora da lista; é onde está o PDF do
+  catálogo de peças "Trator Agrale 4120 Motor Ruggerini") e `yanmar.com`
+  (o próprio site recusa, "Access Denied"). Cópia do Internet Archive de
+  página oficial: **a regra de segurança do ambiente barrou**; não tentar
+  de novo. As fichas antigas do 4100 / 4118 / 4120 saíram do site da
+  Agrale (o endereço `/pdf/pt/...` dá 404, e os downloads de hoje, 1 a 200,
+  são só da linha atual). Contornar bloqueio não se faz. Caminhos
+  legítimos: o cliente acrescenta o domínio em Acesso à rede, ou baixa o
+  PDF e sobe numa pasta `catalogos/` do repositório.
+- **"Agrale 4100" no Conjunto do Pistão MD (8082827444272): em aberto, não
+  é "provável erro".** Em 24/09 (noite) isso foi dado como provável erro
+  pelo resumo de uma busca. Estava forte demais: em 21/09 o catálogo
+  oficial de peças da Agrale foi lido, e ele é um só para `4100.4 HSE /
+  4100 HSE / 4100 SEI / 4100 E HSE / 4120 HSE / 4120 SEI / 4118.4`, com três
+  motores dentro (ver `catalogo-e-busca.md`, "Motor não é marca"). A
+  ficha oficial do 4100 Industrial de hoje diz "Agrale 1 cilindro", mas é
+  o trator atual, não as versões antigas. Falta ver no catálogo **qual
+  motor vai em cada trator**. Não mexer até lá.
+- **Juntas M93 com "Tratores: Agrale 4200, Agrale 4300"**: conferir no
+  mesmo catálogo em quais tratores o M93 vai.
 - **Virabrequim 4TNV88 XAT** (7927664050224): a ficha diz `4TNV88 XAT` e o
   metacampo diz `4TNV88` (regra 4, de 21/09). Por isso ele aparece no filtro
   "4TNV88" e na coleção do 3TNV88 / 4TNV88, e o virabrequim comum diz que
@@ -478,25 +482,26 @@ Backup em `backup-padronizacao-24-09.json`, chave `terceira_rodada`.
 - **Filtro de combustível NS50 / NS75 / NS90 / TC14**: tem o microtrator
   `TC10` e não tem os motores `B9` e `NB10`, que são os do TC10 nas outras
   peças.
-- **O `12LD 475-2` do filtro de óleo 2175107.** A busca no i-service da
-  Lombardini (só o resumo, o PDF não abriu) diz que a linha 12LD usa o
-  cartucho de 90 mm, `2175.131`, no desenho "D Controls/Lubricating
-  System" do 12LD 435-2, e o manual de oficina é um só para 435-2 e 475-2.
-  O 2175107 tem cerca de 78 mm. Tudo indica que o 12LD 475-2 sai do título,
-  da ficha, do metacampo e das etiquetas. **Não foi mexido**: falta abrir o
-  PDF oficial ou o OK do cliente.
-- **Sileo 1000 / 1400 no pistão 6501512 e na correia 2440338.** Entrou em
-  24/09 pela palavra de revendas. Pela regra nova, precisa do desenho "B
-  Connecting Rod/Piston Set/Cylinder" do SILEO no i-service
-  (`/en/manuals/1833/-1/SILEO`). Continua na ficha até lá.
-- **Bronzina de mancal 1611195 (LDW 1003 / LDW 1404 0,50)**: a observação
-  diz "O LDW 1003 usa 4 peças" e não diz quantas vão no LDW 1404. Conferir
-  no catálogo oficial antes de escrever.
-- **Faceta**, na próxima sessão com navegador:
-  `/collections/lombardini?filter.p.m.custom.modelos_compativeis=LDW%201003`
-  deve devolver 6 peças, `...=Sileo%201000` deve devolver 2 (pistão e
-  correia) e `/collections/all?filter.p.m.custom.modelos_compativeis=MD170`
-  deve devolver o pistão Agrale 4100.
+- ~~O `12LD 475-2` do filtro de óleo 2175107~~: **confirmado, fica.** O
+  desenho oficial D do 12LD 475-2 dá o 2175.107 (59 mm) e o 2175.131 (90 mm)
+  como alternativas na mesma posição. A dúvida veio de um link errado do
+  i-service. Ver `catalogo-e-busca.md`, "Conferência no catálogo oficial
+  Lombardini".
+- ~~Sileo 1000 / 1400 no pistão 6501512 e na correia 2440338~~:
+  **confirmado** nos desenhos B e D do SILEO (pistão: 3 e 4; correia: 1).
+- **Bronzina de mancal 1611195**: o desenho E dá **5 no LDW 1404**.
+  Proposta, esperando o OK do cliente: a observação passa a `Vai 1 por
+  mancal: o LDW 1003 leva 4 e o LDW 1404 leva 5.`
+- **Conteúdo do PISTON SET** (6501512 diz com anéis, pino e travas; 6500272
+  diz só o pistão) e **bico no porta-injetor 6615045**: o catálogo oficial
+  não responde. Conferir na caixa em estoque.
+- **ACME AD230 no filtro 2175180**: sem fonte oficial.
+- ~~Faceta~~: **conferida em 24/09.** LDW 1003 devolve 6, Sileo 1000
+  devolve 2, MD170 devolve o pistão MD e 12LD 475-2 devolve 2.
+- ~~Preview do tema de trabalho~~: **medido em 24/09** nas 118 páginas
+  reais: 523 cartões na faixa, nenhum sem motor em comum com a página;
+  títulos 96 "motor", 8 "microtrator", 14 sem faixa; as 29 linhas de
+  Observação das 19 fichas aparecem. Falta só o cliente publicar.
 
 \---
 
@@ -508,6 +513,7 @@ tarefa e o diário era dois terços dele. Abra `registros.md` quando a
 pergunta for "por que isso ficou assim"; para trabalhar, o que está acima
 basta.
 
+- Registro de 24/09/2026 (fim da noite): catálogos oficiais com a rede liberada
 - Registro de 24/09/2026 (noite, segunda mensagem): "Peças para o mesmo motor" misturava motores
 - Registro de 24/09/2026 (noite): regra do título, motores MD no filtro, observações por cilindro e a linha Observação da ficha
 - Registro de 24/09/2026: os 9 Lombardini padronizados, SEO desatualizado e tema publicado
