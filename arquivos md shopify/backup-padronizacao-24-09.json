@@ -925,5 +925,51 @@
     "descriptionHtml": "<p><strong>Especificações:</strong></p><ul>\n<li>SKU: 70312211</li>\n<li>Motores Compatíveis: B4T 5.5 HP, B4T 6.5 HP</li>\n<li>Observações: modelo metálico.</li>\n</ul>"
    }
   }
+ },
+ "terceira_rodada": {
+  "o_que": "24/09 (noite): observações de quantidade reescritas, pontuação de duas observações, motores MD no metacampo do pistão Agrale 4100. Estado antes da mudança.",
+  "old": {
+   "gid://shopify/Product/8082827444272": {
+    "title": "Conjunto do Pistão Agrale 4100 / 4118 / 4120 STD",
+    "descriptionHtml": "<p><strong>Especificações:</strong></p>\n<ul>\n<li>SKU: 7072.004.007.00.3</li>\n<li>Motores Compatíveis: MD170, MD171, MD190, MD191</li>\n<li>Tratores Compatíveis: Agrale 4100, Agrale 4118, Agrale 4120</li>\n<li>Medida: STD, 85 mm</li>\n<li>Conteúdo: pistão, jogo de anéis, pino e travas</li>\n</ul>\n<p><strong>Observações:</strong></p>\n<ul>\n<li>O motor usa 2 conjuntos, um por cilindro.</li>\n</ul>",
+    "custom.modelos_compativeis": [
+     "Agrale 4100",
+     "Agrale 4118",
+     "Agrale 4120"
+    ],
+    "seo.description": "Conjunto do Pistão Agrale 4100 / 4118 / 4120 STD, código 7072.004.007.00.3. Serve em tratores Agrale 4100, Agrale 4118 e Agrale 4120. Envio para todo o Brasil."
+   },
+   "gid://shopify/Product/10290679808048": {
+    "title": "Porta-Injetor Completo Lombardini 12LD 475-2 Original",
+    "descriptionHtml": "<p><strong>Especificações:</strong></p>\n<ul>\n<li>SKU: 6615045</li>\n<li>Motores Compatíveis: 12LD 475-2</li>\n<li>Conteúdo: porta-injetor com o bico injetor já montado</li>\n</ul>\n<p><strong>Observações:</strong></p>\n<ul>\n<li>Para a versão não EPA do motor. Na versão EPA o porta-injetor é outro.</li>\n<li>O motor usa 2 conjuntos, um por cilindro.</li>\n</ul>"
+   },
+   "gid://shopify/Product/10290712707120": {
+    "title": "Pistão Lombardini 9LD 625-2 / 9LD 626-2 / 11LD 625-3 / 11LD 626-3 STD Original",
+    "descriptionHtml": "<p><strong>Especificações:</strong></p>\n<ul>\n<li>SKU: 6500272</li>\n<li>Motores Compatíveis: 9LD 625-2, 9LD 626-2, 11LD 625-3, 11LD 626-3</li>\n<li>Medida: STD, 95 mm</li>\n<li>Conteúdo: só o pistão, sem anéis, pino e travas</li>\n</ul>\n<p><strong>Observações:</strong></p>\n<ul>\n<li>É 1 por cilindro: o 9LD 625-2 usa 2 e o 11LD 625-3 usa 3.</li>\n<li>O jogo de anéis STD desses motores é o 8211209.</li>\n</ul>"
+   },
+   "gid://shopify/Product/10290776047664": {
+    "title": "Conjunto do Pistão Lombardini LDW 702 / LDW 1003 / LDW 1404 STD Original",
+    "descriptionHtml": "<p><strong>Especificações:</strong></p>\n<ul>\n<li>SKU: 6501512</li>\n<li>Motores Compatíveis: LDW 702, LDW 1003, LDW 1404, Sileo 1000, Sileo 1400</li>\n<li>Medida: STD, 75 mm</li>\n<li>Conteúdo: pistão, pino, travas e jogo de anéis</li>\n</ul>\n<p><strong>Observações:</strong></p>\n<ul>\n<li>Para cilindro sem retífica. Pino de 20 mm.</li>\n<li>É 1 por cilindro: o LDW 1003 usa 3.</li>\n</ul>"
+   },
+   "gid://shopify/Product/10289676091440": {
+    "title": "Bucha do Pé de Biela Lombardini LDW 1003 Original",
+    "descriptionHtml": "<p><strong>Especificações:</strong></p>\n<ul>\n<li>SKU: 1630038</li>\n<li>Motores Compatíveis: LDW 1003</li>\n</ul>\n<p><strong>Observações:</strong></p>\n<ul>\n<li>É 1 por biela. O LDW 1003 usa 3.</li>\n<li>O pino do pistão desse motor tem 20 mm de diâmetro.</li>\n</ul>"
+   },
+   "gid://shopify/Product/7897370034224": {
+    "title": "Disco de Soja 8 mm 90 Furos Rampflow Universal",
+    "descriptionHtml": "<p><strong>Especificações:</strong></p>\n<ul>\n<li>Quantidade de furos: 90</li>\n<li>Diâmetro dos furos: 8,0 mm</li>\n<li>Espessura do disco: 4,5 mm</li>\n<li>Carreira: dupla</li>\n<li>Tecnologia: RampFlow</li>\n<li>SKU: 1010065</li>\n</ul>\n<p><strong>Observações: </strong></p>\n<ul>\n<li>Recomendado usar anel de 4 mm</li>\n</ul>"
+   },
+   "gid://shopify/Product/7906245017648": {
+    "title": "Caixa do Ventilador Yanmar NS75 Original",
+    "descriptionHtml": "<p><strong>Especificações:</strong></p>\n<ul>\n<li>Motores Compatíveis: NS75</li>\n<li>SKU: NS75C.44886<br>\n</li>\n</ul>\n<p><strong>Observações:</strong></p>\n<ul>\n<li>Não acompanha hélice, telas laterais ou demais acessórios de fixação </li>\n</ul>"
+   }
+  },
+  "tema": {
+   "copia": "gid://shopify/OnlineStoreTheme/166112100400",
+   "de": "gid://shopify/OnlineStoreTheme/166080315440",
+   "arquivo": "blocks/atd_produto_ficha.liquid",
+   "md5_original": "7d3392a09082a8272d00630a0ad8be23",
+   "tamanho_original": 28765
+  }
  }
 }

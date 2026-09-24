@@ -963,6 +963,37 @@ Três coisas para não esquecer:
 Medido em 390, 768, 990 e 1440, com peça em estoque e peça esgotada: topo 0px
 e fim 0px em todas. Botão de comprar a 1440 subiu de y=889 para y=692.
 
+### A linha Observação (24/09/2026, tema de trabalho `166112100400`)
+
+Pedido do cliente, com print do pistão Agrale 4100: "a parte da observação
+continua não formatada... preciso que se integre junto às outras". A linha
+saía em `.atd-ficha__obs` com fio dourado de 2px à esquerda, recuo de 10px
+e Inter 14px peso 400: a única linha da ficha com moldura própria e letra
+menor que as outras.
+
+Em `blocks/atd_produto_ficha.liquid`, item 10 do histórico:
+
+- `.atd-ficha__obs` perdeu o fio e o recuo e herda o 15px e a tinta do
+  `.atd-ficha__valor`, em **peso 500**. O tema só carrega Inter 400, 500,
+  700 e 800; 600 cairia no 700 e pesaria como as pastilhas.
+- **Uma frase por linha**: cada `<li>` do bloco Observações vira um
+  `.atd-ficha__obs-item`. Para isso a descrição ganha uma quebra de linha
+  depois de cada `</li>` antes do `strip_html` (a captura `atd_quebra`).
+  Antes, "Filtro rosqueado, rosca M20 x 1,5." e "Diâmetro externo de cerca
+  de 78 mm." saíam emendadas numa linha só, e numa descrição sem quebra no
+  HTML (Cobertura do Radiador NS18) sairiam coladas, sem espaço.
+
+Conferido fora da loja, porque a rede da sessão bloqueia o domínio: o
+bloco foi renderizado com liquidjs contra as descrições reais (pistão Agrale
+4100, filtro 2175107, cobertura NS18 com um segundo item de teste,
+virabrequim 4TNV88 com `<br>` solto) e medido no Chromium com Inter
+400/500/700/800. Todas as outras linhas saíram iguais ao antes, byte a byte.
+Observação: 15px, peso 500, sem borda, começando no mesmo x das pastilhas
+(116 no quadro de teste, igual às outras seis linhas). O arquivo gravado
+bate com o testado (md5 `d803a77f...`). **Falta medir no preview**: com a
+rede liberada, `?preview_theme_id=166112100400` no pistão Agrale 4100 e no
+filtro 2175107, a 390, 990 e 1440.
+
 ### O localizador virou lista própria (23/09/2026)
 
 `<select>` nativo não aceita folha na lista: quem desenha é o sistema

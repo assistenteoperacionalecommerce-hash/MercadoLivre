@@ -6,8 +6,9 @@
 Documento de passagem. Sessão nova lê este primeiro.
 **A lista de pendências deste documento é a única que vale.**
 
-**Mudou em 24/09: o tema de trabalho foi publicado. Hoje não existe tema de
-trabalho.** Conferido com `themes(first: 10)` em 24/09/2026.
+**Mudou em 24/09: o tema de trabalho foi publicado, e à noite saiu uma
+cópia nova dele para arrumar a linha Observação da ficha.** Conferido com
+`themes(first: 10)` em 24/09/2026.
 
 - No ar: **DEV (mais recente)** (`gid://shopify/OnlineStoreTheme/166080315440`,
   cdn `/t/25/`). É a "Cópia de DEV - Filtros, carrinho e celular 18-09" de
@@ -16,9 +17,16 @@ trabalho.** Conferido com `themes(first: 10)` em 24/09/2026.
   `145492672560` ("DEV - Ajustes visuais 27-08", `/t/23/`) estão
   despublicados e **defasados**: não têm o que foi feito no `/t/25/`. Não
   grave neles.
-- **O próximo ajuste de tema começa por uma cópia nova do `166080315440`**,
-  feita no admin (Loja virtual, Temas, Duplicar). Anote aqui o id e o cdn
-  da cópia antes de gravar.
+- **Tema de trabalho: "DEV - Observação na ficha 24-09"**
+  (`gid://shopify/OnlineStoreTheme/166112100400`), cópia do `166080315440`
+  feita em 24/09 à noite com `themeDuplicate` (o conector ainda deixa). A
+  única diferença para o do ar é `blocks/atd_produto_ficha.liquid`: md5
+  `d803a77fa18abbdc4ec79aaa9b7e09e5`, 30.285 bytes, contra
+  `7d3392a09082a8272d00630a0ad8be23`, 28.765 no ar. O cdn não foi
+  conferido, porque a rede da sessão bloqueia o domínio da loja. **Espera o
+  cliente olhar o preview e publicar.** Enquanto não for publicado, o
+  próximo ajuste de tema entra nele; publicado, o próximo começa por uma
+  cópia nova.
 - Antes de gravar, confira sempre `themes(first: 10) { id name role }`.
 
 O que muda no tema de trabalho **não** aparece no ar até o cliente publicar
@@ -415,21 +423,52 @@ O cliente respondeu no mesmo dia e está gravado. Detalhe em
 - ~~`Original`~~: **todas as peças Lombardini são originais**; os oito
   títulos que faltavam ganharam a palavra.
 
+O que sobrou foi respondido na mesma noite: item 15.
+
+### 15. Respostas do cliente, 24/09 (noite)
+
+Detalhe em `catalogo-e-busca.md`, "Respostas do cliente, 24/09 (noite)".
+Backup em `backup-padronizacao-24-09.json`, chave `terceira_rodada`.
+
+- ~~Sileo no título do pistão 6501512~~: **a regra 2 estava errada.** O
+  título leva só os principais modelos, e a ficha e o metacampo levam
+  todos. O Sileo fica na ficha, e o título não muda.
+- ~~Motores MD no filtro do pistão Agrale 4100~~: **gravado.** O metacampo
+  tem `MD170, MD171, MD190, MD191, Agrale 4100, Agrale 4118, Agrale 4120`,
+  e o SEO cita os motores. Reindexado.
+- ~~"O motor usa 2 conjuntos" num produto de quatro motores~~: **reescrito**
+  em cinco produtos, no formato `Vai 1 por cilindro: o LDW 702 leva 2...`.
+- ~~Observação sem formatação~~: **tema de trabalho `166112100400`**,
+  esperando o cliente publicar. Ver "Tema" no topo.
+- **Fonte de compatibilidade (regra nova)**: só catálogo oficial e original
+  do fabricante confirma modelo. Revenda não confirma.
+
 **O que sobrou para conferir:**
 
-- **Sileo no título do pistão 6501512?** A regra 2 diz que em pistão, anel
-  e camisa todo modelo da ficha está no título. O Sileo 1000 / 1400 entrou
-  na ficha e não no título. Ou entra no título, ou sai da ficha e do
-  metacampo e fica só em etiqueta. Decisão do cliente.
-
-- **O `12LD 475-2` do filtro de óleo 2175107.** Está no título desde o
-  cadastro do cliente e continua lá. Mas os catálogos de revenda dão para o
-  12LD 475-2 o filtro de 90 mm (2175131), e o 2175107 tem cerca de 78 mm.
-  Vale o cliente conferir na plaqueta de um motor antes da próxima venda.
+- **Liberar a rede da sessão.** O ambiente da nuvem bloqueia
+  `iservice.lombardini.it`, `agrale.com.br`, `pdf.agrale.com.br` e
+  `loja.atratordiesel.com.br` (403 no proxy, WebFetch também). Sem eles não
+  dá para abrir o catálogo oficial nem medir o preview. O cliente libera
+  em: menu do ambiente no título da sessão, Editar, Acesso à rede.
+- **O `12LD 475-2` do filtro de óleo 2175107.** A busca no i-service da
+  Lombardini (só o resumo, o PDF não abriu) diz que a linha 12LD usa o
+  cartucho de 90 mm, `2175.131`, no desenho "D Controls/Lubricating
+  System" do 12LD 435-2, e o manual de oficina é um só para 435-2 e 475-2.
+  O 2175107 tem cerca de 78 mm. Tudo indica que o 12LD 475-2 sai do título,
+  da ficha, do metacampo e das etiquetas. **Não foi mexido**: falta abrir o
+  PDF oficial ou o OK do cliente.
+- **Sileo 1000 / 1400 no pistão 6501512 e na correia 2440338.** Entrou em
+  24/09 pela palavra de revendas. Pela regra nova, precisa do desenho "B
+  Connecting Rod/Piston Set/Cylinder" do SILEO no i-service
+  (`/en/manuals/1833/-1/SILEO`). Continua na ficha até lá.
+- **Bronzina de mancal 1611195 (LDW 1003 / LDW 1404 0,50)**: a observação
+  diz "O LDW 1003 usa 4 peças" e não diz quantas vão no LDW 1404. Conferir
+  no catálogo oficial antes de escrever.
 - **Faceta**, na próxima sessão com navegador:
   `/collections/lombardini?filter.p.m.custom.modelos_compativeis=LDW%201003`
-  deve devolver 6 peças e `...=Sileo%201000` deve devolver 2 (pistão e
-  correia), cada uma mais os 4 links de recomendação.
+  deve devolver 6 peças, `...=Sileo%201000` deve devolver 2 (pistão e
+  correia) e `/collections/all?filter.p.m.custom.modelos_compativeis=MD170`
+  deve devolver o pistão Agrale 4100.
 
 \---
 
@@ -441,6 +480,7 @@ tarefa e o diário era dois terços dele. Abra `registros.md` quando a
 pergunta for "por que isso ficou assim"; para trabalhar, o que está acima
 basta.
 
+- Registro de 24/09/2026 (noite): regra do título, motores MD no filtro, observações por cilindro e a linha Observação da ficha
 - Registro de 24/09/2026: os 9 Lombardini padronizados, SEO desatualizado e tema publicado
 - Registro de 23/09/2026 (noite): cartao das marcas, hierarquia do banner, seta do localizador e o schema que some
 - Registro de 23/09/2026 (tarde): botão, menu, lista de modelos, faixa de marcas e o diário

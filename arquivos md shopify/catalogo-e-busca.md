@@ -57,12 +57,12 @@ a skill disser outra coisa, alinhe as duas com o cliente.
 - Marca da **máquina** (Yanmar, Agrale, Tobatta, Branco, Lavrale,
   Lombardini), não a do fabricante da peça.
 - Modelos em caixa alta, como na plaqueta: `NS11`, `LDW 1003`, `12LD 475-2`,
-  `B4T 13.0`. Em pistão, anel e camisa, todo modelo da ficha tem que estar
-  no título (regra 2, mais abaixo); nas outras peças o título leva os
-  principais e a lista inteira fica na ficha.
-  **Fora da regra hoje**: o Conjunto do Pistão Lombardini 6501512 tem
-  `Sileo 1000` e `Sileo 1400` na ficha e não no título (entraram em 24/09).
-  O cliente decide se vão para o título ou ficam só em etiqueta.
+  `B4T 13.0`. **O título leva só os principais**, para não ficar comprido;
+  a lista inteira vai na ficha e no metacampo. Vale para toda peça, pistão,
+  anel e camisa inclusive (cliente, 24/09: "não precisa colocar o título
+  muito longo, apenas as principais e na ficha coloque todas"). Exemplo: o
+  Conjunto do Pistão 6501512 tem `LDW 702 / LDW 1003 / LDW 1404` no título
+  e `Sileo 1000` e `Sileo 1400` só na ficha.
 - Medida depois dos modelos: `STD`, `0,25`, `0,50`.
 - `Original` no fim, quando for original.
 - Nunca: código da peça, "Motor", "para", "Kit", travessão.
@@ -142,8 +142,15 @@ Dois blocos, cada um com título em negrito e lista. Nada fora deles.
   "Regra da compatibilidade", mais abaixo.
 - **`Medida:`** e **`Conteúdo:`** só quando a peça tiver. Conteúdo diz o
   que vem e o que não vem (`só o pistão, sem anéis, pino e travas`).
-- **Observações** é bloco próprio, uma frase por item: quantas o motor usa,
-  rosca e diâmetro, versão do motor, explicação que não cabe no valor.
+- **Observações** é bloco próprio, uma frase por item: quantas vão no
+  motor, rosca e diâmetro, versão do motor, explicação que não cabe no
+  valor. Cada item sai numa linha própria na ficha da página.
+- **Quantas vão no motor** diz de qual motor fala: `Vai 1 por cilindro: o
+  LDW 702 leva 2, o LDW 1003 leva 3 e o LDW 1404 leva 4.`, ou, com o mesmo
+  número para todos, `Os quatro motores MD têm 2 cilindros e levam 2
+  conjuntos.` Nunca "O motor usa 2" numa peça de vários motores, que não
+  diz qual motor (cliente, 24/09). Sem a conta de um dos motores, não
+  escreva a dele.
   Nunca `<li>Observações: ...</li>` dentro de Especificações, que sai sem
   negrito e colado na ficha (cliente, 24/09). Sem observação, sem o bloco.
 - **Nunca**: texto de anúncio do Mercado Livre ("para que serve", "perguntas
@@ -159,9 +166,9 @@ Tipo `list.single_line_text_field`. **Todos os valores de todas as linhas
 (que casam o valor exato) e o "Serve em" do cartão. Nunca marca sozinha
 (`Lombardini`, `Ruggerini`). Gravou, toque e confira (regra 9).
 
-Exceção a conferir: o Conjunto do Pistão Agrale 4100 tem só os tratores no
-metacampo (`Agrale 4100, Agrale 4118, Agrale 4120`), sem os motores MD da
-ficha. Está assim desde 22/09.
+O Conjunto do Pistão Agrale 4100 teve só os tratores no metacampo de 22/09
+a 24/09. Desde 24/09 à noite tem as duas linhas da ficha, na ordem dela:
+`MD170, MD171, MD190, MD191, Agrale 4100, Agrale 4118, Agrale 4120`.
 
 ### SEO
 
@@ -423,6 +430,46 @@ Gravado em 13 produtos, sem `userErrors`, lido de volta. Estado anterior em
   a medida saiu de Observações para uma linha `Medida:` (pistões e bronzina).
   Varredura por "Observa" no catálogo: nenhuma outra linha inline sobrou.
 
+### Respostas do cliente, 24/09 (noite)
+
+Gravado sem `userErrors` e lido de volta. Estado anterior em
+`backup-padronizacao-24-09.json`, chave `terceira_rodada`.
+
+- **Título: só os principais** (seção 2, "Título", e regra 2 revista). O
+  Sileo fica na ficha e no metacampo do pistão 6501512, e o título não
+  muda.
+- **Motores MD no filtro do pistão Agrale 4100** (8082827444272). O
+  metacampo passou a
+  `MD170, MD171, MD190, MD191, Agrale 4100, Agrale 4118, Agrale 4120`, e o
+  SEO passou a `Serve em motores MD170, MD171 e outros; tratores Agrale
+  4100, Agrale 4118 e Agrale 4120.` Os quatro MD vêm do catálogo oficial de
+  peças da Agrale para esses tratores e do manual de oficina Ruggerini da
+  série MD2 (ver "Motor não é marca", 21/09). Reindexado com etiqueta
+  temporária.
+- **"O motor usa 2 conjuntos" num produto de quatro motores.** O cliente
+  achou estranho, e perguntou se valia para todos. Varredura das 21 peças
+  com Observações: cinco falavam de quantidade. Reescritas no formato da
+  seção 2:
+  - pistão Agrale 4100: `Vai 1 conjunto por cilindro. Os quatro motores MD
+    têm 2 cilindros e levam 2 conjuntos.`
+  - porta-injetor 6615045: `Vai 1 por cilindro: o 12LD 475-2 tem 2
+    cilindros e leva 2.`
+  - pistão 6500272: `Vai 1 por cilindro: os 9LD levam 2 e os 11LD levam 3.`
+  - pistão 6501512: `Vai 1 por cilindro: o LDW 702 leva 2, o LDW 1003 leva
+    3 e o LDW 1404 leva 4.`
+  - bucha 1630038: `Vai 1 por biela: o LDW 1003 leva 3.`
+  O número de cilindros sai do próprio nome Lombardini (o último algarismo
+  do LDW, o `-2` e o `-3` da linha LD). A bronzina 1611195 ficou como
+  estava ("O LDW 1003 usa 4 peças"), porque falta a conta do LDW 1404.
+- **Pontuação**: ponto final nas observações do Disco de Soja 8 mm e da
+  Caixa do Ventilador NS75, e um `<br>` solto a menos na ficha da caixa.
+- **A linha Observação da ficha** saía com fio dourado e letra fina, fora
+  do desenho das outras linhas. Mudou no tema de trabalho `166112100400`
+  (ver `tema-e-design.md`, "A linha Observação").
+- **12LD 475-2 no filtro 2175107 e Sileo**: continuam como estavam, à
+  espera do catálogo oficial. Ver a lista de pendências em
+  `comece-por-aqui.md`, item 15.
+
 ### Estoque zerado até segunda ordem (decisão do cliente, 16/09/2026)
 
 Zerado no site e **mantido em zero** até o cliente mandar voltar, mesmo que
@@ -566,6 +613,13 @@ cadastro de peça nova e em qualquer revisão. Quando uma linha não passa por
 estas regras, ela **sai**: o cliente foi explícito, "não podemos induzir o
 cliente ao erro", e peça a menos se resolve no telefone, peça errada não.
 
+**Fonte (cliente, 24/09/2026): só catálogo oficial e original confirma um
+modelo.** Vale o do fabricante: i-service da Lombardini
+(`iservice.lombardini.it`), catálogo de peças e ficha técnica da Agrale,
+manual de oficina da fábrica. Revenda, marketplace e loja de peças servem
+de pista, nunca de prova. Se o catálogo oficial não abre, o modelo novo não
+entra, e o que já estava fica anotado como pendência.
+
 **1. Diâmetro manda em pistão, anel e camisa.** Essas três só podem listar
 motores do **mesmo diâmetro de cilindro**. Bronzina de biela e de mancal
 podem cruzar diâmetros, porque dependem do virabrequim. Junta, filtro,
@@ -578,9 +632,13 @@ Diâmetros Agrale confirmados no folheto da linha M (Agrale, setembro de
 90 x 100 mm, 2 cilindros, 1.272 cm³. Um jogo de anéis não serve em M90,
 M85 e M80 ao mesmo tempo.
 
-**2. Modelo que não está no título não entra na lista**, a menos que a peça
-seja independente do diâmetro. Foi assim que saíram BS95 do jogo TR10 e
-BS180 do pistão AR140.
+**2. O título não limita a lista** (revista pelo cliente em 24/09/2026).
+Até então a regra dizia que modelo fora do título não entrava na lista de
+pistão, anel e camisa. O cliente corrigiu: o título leva só os principais,
+e a ficha e o metacampo levam todos. Quem decide se um modelo entra é a
+fonte oficial e a regra 1, não o título. BS95 (jogo TR10) e BS180 (pistão
+AR140), que saíram pela regra antiga, continuam fora até um catálogo
+oficial dizer que servem.
 
 **3. Marca não é modelo.** Ruggerini, Lombardini, Scania e Komatsu são
 fabricantes. Vão para **etiqueta**, que é onde a equivalência mora nesta

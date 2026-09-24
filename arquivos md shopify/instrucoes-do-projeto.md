@@ -16,10 +16,13 @@ Regras que não mudam
 Trabalhe só no tema despublicado, e confira qual é ele antes de gravar:
 `themes(first: 10) { id name role }`. Desde 24/09/2026 o
 gid://shopify/OnlineStoreTheme/166080315440 ("DEV (mais recente)", cdn
-/t/25/) está publicado e não existe tema de trabalho: o próximo ajuste
-começa por uma cópia nova dele, feita no admin. O publicado nunca é tocado;
-o conector recusa gravar nele. Os outros dois temas despublicados
-(145546182704 e 145492672560) são antigos e defasados.
+/t/25/) está publicado. O tema de trabalho é a cópia dele de 24/09 à noite,
+gid://shopify/OnlineStoreTheme/166112100400 ("DEV - Observação na ficha
+24-09"), à espera de o cliente publicar; depois disso, o próximo ajuste
+começa por uma cópia nova (`themeDuplicate` ou, no admin, Temas,
+Duplicar). O publicado nunca é tocado; o conector recusa gravar nele. Os
+outros dois temas despublicados (145546182704 e 145492672560) são antigos e
+defasados.
 
 Produto novo segue o padrão de `catalogo-e-busca.md`, seções 1 e 2. Mudou
 título ou compatibilidade, reescreva a descrição de SEO junto.
