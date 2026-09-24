@@ -1,0 +1,9 @@
+{
+  "conjunto_pistao_agrale_8082827444272": {
+    "quando": "2026-09-21",
+    "motivo": "campo MOTORES trazia marcas (Ruggerini, Lombardini) em vez de modelo de motor",
+    "descriptionHtml_antes": "<p>Kit completo com pistão de 85 mm, jogo de anéis de segmento, pino do pistão e trava do pino (anel elástico).</p>\n<p><strong>Especificações:</strong></p>\n<ul>\n<li>SKU: 7072.004.007.00.3</li>\n<li>Motores Compatíveis: Ruggerini, Lombardini (1 cilindro)</li>\n<li>Tratores Compatíveis: Agrale 4100 HSE, Agrale 4100 SEI, Agrale 4100 SEI GÁS, Agrale 4100.4 HSE, Agrale 4118.4, Agrale 4120 SEI, Agrale 4120 HSE</li>\n<li>Medida: STD, 85 mm</li>\n</ul>",
+    "motores_depois": "M85, MD170, MD171, MD190, MD191",
+    "base": "Agrale M85 tem 85 mm de diâmetro (M80 tem 80, M90 e M93 tem 90). Ruggerini MD150/MD151 tem 80 mm; MD170/MD171/MD190/MD191 tem 85 mm, pelo manual de oficina da serie MD2. Catalogo oficial de pecas do trator Agrale 4120 e o Motor Ruggerini."
+  }
+}
